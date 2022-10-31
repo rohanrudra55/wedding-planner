@@ -7,6 +7,7 @@ public class Signup extends javax.swing.JFrame {
     public Signup() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
     }
 
     /**

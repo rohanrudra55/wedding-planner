@@ -16,6 +16,7 @@ public class vendorSummary extends javax.swing.JFrame {
     public vendorSummary() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
     }
 
     /**

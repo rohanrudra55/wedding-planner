@@ -6,6 +6,7 @@ public class vendorSignup extends javax.swing.JFrame {
     public vendorSignup() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
     }
 
     /**

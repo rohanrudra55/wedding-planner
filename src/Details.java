@@ -28,6 +28,7 @@ public class Details extends javax.swing.JFrame {
     public Details() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
         entries_no=0;
         pricestd_final="0";
         pricepro_final="0";

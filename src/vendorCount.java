@@ -21,6 +21,7 @@ public class vendorCount extends javax.swing.JFrame {
     public vendorCount() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
         
     }
         

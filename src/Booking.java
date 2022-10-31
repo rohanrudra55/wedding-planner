@@ -12,6 +12,7 @@ public class Booking extends javax.swing.JFrame {
     public Booking() {
         initComponents();
         setBounds(100,200,1100,665);
+        setLocation(0,0);
         billheader();
     }
 
