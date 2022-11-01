@@ -37,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         jVendorLogin = new javax.swing.JButton();
         jUsername_tag = new javax.swing.JLabel();
         jPassword_tag = new javax.swing.JLabel();
+        jIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,6 +142,14 @@ public class Login extends javax.swing.JFrame {
         jPassword_tag.setText("Password");
         jPanel1.add(jPassword_tag);
         jPassword_tag.setBounds(559, 313, 130, 29);
+
+        jIcon.setForeground(new java.awt.Color(255, 255, 255));
+        jIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pngwing.com.png"))); // NOI18N
+        jIcon.setLabelFor(jIcon);
+        jIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jIcon);
+        jIcon.setBounds(-50, 0, 990, 620);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,6 +257,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jBanner;
+    private javax.swing.JLabel jIcon;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPassword_tag;
     private javax.swing.JButton jSigninB;
