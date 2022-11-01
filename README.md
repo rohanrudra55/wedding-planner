@@ -26,4 +26,4 @@ and distribute the ZIP file.
 
 ## Application
 
-<img src="src/icon/windowview.png></img>
+<img src="src/icon/windowview.png">
