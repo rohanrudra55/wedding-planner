@@ -19,11 +19,17 @@ import javax.swing.table.TableModel;
  * @author PraveenAnandhanathan
  */
 public class Details extends javax.swing.JFrame {
-    private String name_final;
     private String pricestd_final;
     private String pricepro_final;
     private String curr_username;
     private int entries_no;
+    private String name_selected;
+    private String area_selected;
+    private String service_selected;
+//    private String pricestd_selected;
+//    private String pricepro_selected;
+//    private String contact_selected;
+//    private String email_selected;
     
     public Details() {
         initComponents();
@@ -59,16 +65,16 @@ public class Details extends javax.swing.JFrame {
         jEmailTag = new javax.swing.JLabel();
         jPricingStdTag = new javax.swing.JLabel();
         jPricingProTag = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
-        services = new javax.swing.JTextField();
-        phone = new javax.swing.JTextField();
-        address = new javax.swing.JTextField();
-        email = new javax.swing.JTextField();
-        pricingstd = new javax.swing.JTextField();
-        pricingpro = new javax.swing.JTextField();
         displayUsr = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         addvalue = new javax.swing.JButton();
+        jName = new javax.swing.JComboBox<>();
+        jPricepro = new javax.swing.JLabel();
+        jContact = new javax.swing.JLabel();
+        jMail = new javax.swing.JLabel();
+        jPricestd = new javax.swing.JLabel();
+        jArea = new javax.swing.JComboBox<>();
+        jServicesList = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -82,9 +88,17 @@ public class Details extends javax.swing.JFrame {
 
             },
             new String [] {
-                "SN", "Name", "Services", "Contact", "Address", "Email", "Pricings (Standard)", "Pricings (Professional)"
+                "SN", "Name", "Services", "Contact", "Area", "Email", "Pricings (Standard)", "Pricings (Professional)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jDisplayTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jDisplayTableMouseClicked(evt);
@@ -108,22 +122,22 @@ public class Details extends javax.swing.JFrame {
         jNameTag.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jNameTag.setText("Name");
         jPanel1.add(jNameTag);
-        jNameTag.setBounds(60, 110, 90, 22);
+        jNameTag.setBounds(60, 240, 90, 22);
 
         jServicesTag.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jServicesTag.setText("Serivces");
         jPanel1.add(jServicesTag);
-        jServicesTag.setBounds(60, 170, 100, 22);
+        jServicesTag.setBounds(60, 140, 100, 22);
 
         jPhonenumTag.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPhonenumTag.setText("Phone Number");
         jPanel1.add(jPhonenumTag);
-        jPhonenumTag.setBounds(60, 230, 140, 22);
+        jPhonenumTag.setBounds(60, 300, 140, 22);
 
         jAddressTag.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jAddressTag.setText("Address");
+        jAddressTag.setText("Area");
         jPanel1.add(jAddressTag);
-        jAddressTag.setBounds(60, 290, 100, 22);
+        jAddressTag.setBounds(60, 190, 100, 22);
 
         jEmailTag.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jEmailTag.setText("Email");
@@ -139,56 +153,6 @@ public class Details extends javax.swing.JFrame {
         jPricingProTag.setText("Pricings (Professional)");
         jPanel1.add(jPricingProTag);
         jPricingProTag.setBounds(60, 460, 180, 22);
-
-        name.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(name);
-        name.setBounds(260, 110, 190, 40);
-
-        services.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        services.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                servicesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(services);
-        services.setBounds(260, 160, 190, 40);
-
-        phone.setEditable(false);
-        phone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        phone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneActionPerformed(evt);
-            }
-        });
-        jPanel1.add(phone);
-        phone.setBounds(260, 220, 190, 40);
-
-        address.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        address.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addressActionPerformed(evt);
-            }
-        });
-        jPanel1.add(address);
-        address.setBounds(260, 280, 190, 40);
-
-        email.setEditable(false);
-        email.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(email);
-        email.setBounds(260, 340, 190, 40);
-
-        pricingstd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(pricingstd);
-        pricingstd.setBounds(260, 400, 190, 40);
-
-        pricingpro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(pricingpro);
-        pricingpro.setBounds(260, 450, 190, 40);
 
         displayUsr.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(displayUsr);
@@ -215,6 +179,56 @@ public class Details extends javax.swing.JFrame {
         jPanel1.add(addvalue);
         addvalue.setBounds(350, 530, 100, 50);
 
+        jName.setEditable(true);
+        jName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ram", "Jony", "Rahim", "Ross" }));
+        jName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jName);
+        jName.setBounds(260, 230, 190, 40);
+
+        jPricepro.setBackground(new java.awt.Color(204, 204, 255));
+        jPricepro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jPricepro);
+        jPricepro.setBounds(260, 450, 190, 40);
+
+        jContact.setBackground(new java.awt.Color(204, 204, 255));
+        jContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jContact);
+        jContact.setBounds(260, 290, 190, 40);
+
+        jMail.setBackground(new java.awt.Color(204, 204, 255));
+        jMail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jMail);
+        jMail.setBounds(260, 340, 190, 40);
+
+        jPricestd.setBackground(new java.awt.Color(204, 204, 255));
+        jPricestd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jPricestd);
+        jPricestd.setBounds(260, 390, 190, 40);
+
+        jArea.setEditable(true);
+        jArea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haldiram", "Sealdha", "America" }));
+        jArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAreaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jArea);
+        jArea.setBounds(260, 180, 190, 40);
+
+        jServicesList.setEditable(true);
+        jServicesList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cooking", "Lighting", "Photography", "Flower Decor" }));
+        jServicesList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jServicesListActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jServicesList);
+        jServicesList.setBounds(260, 130, 190, 40);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1080, 620);
 
@@ -238,18 +252,6 @@ public class Details extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bookActionPerformed
 
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-    }//GEN-LAST:event_nameActionPerformed
-
-    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
-    }//GEN-LAST:event_addressActionPerformed
-
-    private void servicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesActionPerformed
-    }//GEN-LAST:event_servicesActionPerformed
-
-    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
-    }//GEN-LAST:event_phoneActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 Login menu = new Login();
                 menu.setVisible(true);
@@ -257,42 +259,76 @@ public class Details extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jDisplayTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDisplayTableMouseClicked
-        int i = jDisplayTable.getSelectedRow();
-        TableModel model =jDisplayTable.getModel();
-        name.setText(model.getValueAt(i,1).toString());
-        services.setText(model.getValueAt(i,2).toString());
-        phone.setText(model.getValueAt(i,3).toString());
-        address.setText(model.getValueAt(i,4).toString());
-        email.setText(model.getValueAt(i,5).toString());
-        pricingstd.setText(model.getValueAt(i,6).toString());
-        pricingpro.setText(model.getValueAt(i,7).toString());
+
     }//GEN-LAST:event_jDisplayTableMouseClicked
 
     private void addvalueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addvalueActionPerformed
                 try{
-                    JOptionPane.showMessageDialog(null, "Added");
-                    name_final = name.getText();
-                    String price1 = pricingstd.getText();
-                    String price2 = pricingpro.getText();
-                    String service = services.getText();
                     DefaultTableModel model = (DefaultTableModel)jDisplayTable.getModel();
                     Object[] row = new Object[8];
                     row[0]=entries_no++;
-                    row[1]=name_final;
-                    row[2]=service;
-                    row[3]="NA";
-                    row[4]="NA";
-                    row[5]="NA";
-                    row[6]=price1;
-                    row[7]=price2;
-                    pricestd_final=String.valueOf(Integer.parseInt(pricestd_final)+Integer.parseInt(price1));
-                    pricepro_final=String.valueOf(Integer.parseInt(pricepro_final)+Integer.parseInt(price2));
+                    row[1]=name_selected;
+                    row[2]=service_selected;
+                    row[3]=jContact.getText();
+                    row[4]=area_selected;
+                    row[5]=jMail.getText();
+                    row[6]=jPricestd.getText();
+                    row[7]=jPricepro.getText();
+                    pricestd_final=String.valueOf(Integer.parseInt(pricestd_final)+Integer.parseInt(jPricestd.getText()));
+                    pricepro_final=String.valueOf(Integer.parseInt(pricepro_final)+Integer.parseInt(jPricepro.getText()));
                     model.addRow(row);
+                    JOptionPane.showMessageDialog(null, "Added");
                 }
                 catch(Exception e){
                     JOptionPane.showMessageDialog(null,e);
                 }
     }//GEN-LAST:event_addvalueActionPerformed
+
+    private void jNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameActionPerformed
+        // Third List
+        name_selected=jName.getSelectedItem().toString();
+        if(name_selected == "Ram"){
+            jContact.setText("1234");
+            jMail.setText(name_selected+"@example.co");
+            jPricestd.setText("100");
+            jPricepro.setText("200");
+        }
+        else if(name_selected=="Jony"){
+            jContact.setText("1234");
+            jMail.setText(name_selected+"@example.co");
+            jPricestd.setText("1000");
+            jPricepro.setText("2000");
+        }
+        else if(name_selected=="Rahim"){
+            jContact.setText("1234");
+            jMail.setText(name_selected+"@example.co");
+            jPricestd.setText("100");
+            jPricepro.setText("200");
+        }
+        else if(name_selected=="Ross"){
+            jContact.setText("123456");
+            jMail.setText(name_selected+"@example.co");
+            jPricestd.setText("200");
+            jPricepro.setText("300");
+        }
+        else{
+            name_selected="NA";
+            jContact.setText("NA");
+            jMail.setText(name_selected+"@example.co");
+            jPricestd.setText("NA");
+            jPricepro.setText("NA");
+        }
+    }//GEN-LAST:event_jNameActionPerformed
+
+    private void jAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAreaActionPerformed
+        // Second List
+        area_selected=jArea.getSelectedItem().toString();
+    }//GEN-LAST:event_jAreaActionPerformed
+
+    private void jServicesListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jServicesListActionPerformed
+        // First List
+        service_selected=jServicesList.getSelectedItem().toString();
+    }//GEN-LAST:event_jServicesListActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -303,26 +339,26 @@ public class Details extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField address;
     private javax.swing.JButton addvalue;
     private javax.swing.JButton book;
     public static javax.swing.JLabel displayUsr;
-    private javax.swing.JTextField email;
     private javax.swing.JLabel jAddressTag;
+    private javax.swing.JComboBox<String> jArea;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jContact;
     private javax.swing.JTable jDisplayTable;
     private javax.swing.JLabel jEmailTag;
+    private javax.swing.JLabel jMail;
+    private javax.swing.JComboBox<String> jName;
     private javax.swing.JLabel jNameTag;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPhonenumTag;
+    private javax.swing.JLabel jPricepro;
+    private javax.swing.JLabel jPricestd;
     private javax.swing.JLabel jPricingProTag;
     private javax.swing.JLabel jPricingStdTag;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jServicesList;
     private javax.swing.JLabel jServicesTag;
-    private javax.swing.JTextField name;
-    private javax.swing.JTextField phone;
-    private javax.swing.JTextField pricingpro;
-    private javax.swing.JTextField pricingstd;
-    private javax.swing.JTextField services;
     // End of variables declaration//GEN-END:variables
 }
