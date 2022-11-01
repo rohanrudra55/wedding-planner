@@ -177,12 +177,19 @@ public class Login extends javax.swing.JFrame {
         }
         else{
             try{
-                JOptionPane.showMessageDialog(null, "Correct");
-                String x = username.getText();
-                Details menu = new Details();
-                menu.setLoggedInUser(x);
-                menu.setVisible(true);
-                setVisible(false);
+                if(username.getText().equals("admin")){
+                    JOptionPane.showMessageDialog(null, "Welcome !");
+                    String x = username.getText();
+                    Details menu = new Details();
+                    menu.setLoggedInUser(x);
+                    menu.setVisible(true);
+                    setVisible(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid");
+                    password.setText("");
+                    username.setText("");
+                }
             }
             catch(Exception e){
                 JOptionPane.showMessageDialog(null,e);
