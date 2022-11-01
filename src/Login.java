@@ -27,7 +27,6 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        img = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         jSigninB = new javax.swing.JButton();
@@ -41,13 +40,14 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 153), 10));
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 620));
         jPanel1.setLayout(null);
-        jPanel1.add(img);
-        img.setBounds(10, 10, 413, 600);
 
         username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        username.setBorder(null);
+        username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
@@ -59,9 +59,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(username);
-        username.setBounds(716, 209, 275, 50);
+        username.setBounds(716, 219, 275, 30);
 
         password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        password.setBorder(null);
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
@@ -73,10 +75,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(password);
-        password.setBounds(716, 305, 275, 50);
+        password.setBounds(716, 305, 275, 40);
 
-        jSigninB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jSigninB.setBackground(new java.awt.Color(0, 153, 255));
+        jSigninB.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jSigninB.setForeground(new java.awt.Color(255, 255, 255));
         jSigninB.setText("SIGN IN");
+        jSigninB.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
         jSigninB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninBActionPerformed(evt);
@@ -85,10 +90,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jSigninB);
         jSigninB.setBounds(612, 425, 125, 47);
 
-        jBanner.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jBanner.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jBanner.setForeground(new java.awt.Color(255, 255, 255));
         jBanner.setText("WEDDING PLANNER");
         jPanel1.add(jBanner);
-        jBanner.setBounds(625, 111, 366, 53);
+        jBanner.setBounds(580, 120, 410, 53);
 
         lbl_username.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lbl_username.setForeground(new java.awt.Color(255, 0, 51));
@@ -100,8 +106,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(lbl_password);
         lbl_password.setBounds(720, 370, 140, 22);
 
-        jSignupB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jSignupB.setBackground(new java.awt.Color(0, 153, 255));
+        jSignupB.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jSignupB.setForeground(new java.awt.Color(255, 255, 255));
         jSignupB.setText("SIGN UP");
+        jSignupB.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
         jSignupB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSignupBActionPerformed(evt);
@@ -110,25 +119,28 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jSignupB);
         jSignupB.setBounds(828, 425, 111, 47);
 
-        jVendorLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jVendorLogin.setBackground(new java.awt.Color(0, 153, 255));
+        jVendorLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jVendorLogin.setForeground(new java.awt.Color(255, 255, 255));
         jVendorLogin.setText("Login as vendor");
+        jVendorLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
         jVendorLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVendorLoginActionPerformed(evt);
             }
         });
         jPanel1.add(jVendorLogin);
-        jVendorLogin.setBounds(696, 517, 156, 28);
+        jVendorLogin.setBounds(685, 500, 210, 50);
 
-        jUsername_tag.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jUsername_tag.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jUsername_tag.setText("Username");
         jPanel1.add(jUsername_tag);
-        jUsername_tag.setBounds(577, 217, 108, 29);
+        jUsername_tag.setBounds(560, 220, 120, 29);
 
-        jPassword_tag.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPassword_tag.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPassword_tag.setText("Password");
         jPanel1.add(jPassword_tag);
-        jPassword_tag.setBounds(577, 313, 112, 29);
+        jPassword_tag.setBounds(559, 313, 130, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,7 +247,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jBanner;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPassword_tag;
