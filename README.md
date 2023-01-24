@@ -16,6 +16,24 @@ To distribute this project, zip up the dist folder (including the lib folder)
 and distribute the ZIP file.
 
 
+## Tree
+```
+.
+├── LICENSE
+├── README.md
+├── assets
+│   └── README.md
+├── build
+│   └── classes
+│       └── README.md
+├── build.xml
+├── database
+│   └── README.md
+├── dist
+│   └── README.md
+└── src
+    └── README.md
+```
 ## Rules
 --- 
 * Do not merge any pull request with out GD
