@@ -6,6 +6,7 @@ import javax.swing.*;
 class Signin extends JFrame implements ActionListener, ItemListener {
 
   JButton signinB;
+  JButton back;
   JPanel loginPanel;
   JLabel userLabel, passLabel, typeLable, userMsg, passMsg;
 
@@ -35,8 +36,8 @@ class Signin extends JFrame implements ActionListener, ItemListener {
     passField = new JPasswordField(15);
     updateState();
 
-    signinB = new JButton("Login");
-
+    signinB = new JButton("Sign in");
+    back = new JButton("Back");
     loginPanel = new JPanel();
     loginPanel.add(typeLable);
     loginPanel.add(dropMenu);
@@ -47,26 +48,35 @@ class Signin extends JFrame implements ActionListener, ItemListener {
     loginPanel.add(passField);
     loginPanel.add(passMsg);
     loginPanel.add(signinB);
+    loginPanel.add(back);
 
     add(loginPanel, BorderLayout.CENTER);
     signinB.addActionListener(this);
+    back.addActionListener(this);
     setTitle("Planer");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
   }
 
   public void actionPerformed(ActionEvent ae) {
-    String userValue = userFeild.getText();
-    String passValue = passField.getText();
-    Profile loginAuthenticate = new Profile();
+    if (ae.getSource() == signinB) {
+      String userValue = userFeild.getText();
+      String passValue = passField.getText();
+      Profile loginAuthenticate = new Profile();
 
-    if (loginAuthenticate.authenticate(userValue, passValue, accountType)) {
-      Menu page = new Menu();
+      if (loginAuthenticate.authenticate(userValue, passValue, accountType)) {
+        Menu page = new Menu();
+        page.setVisible(true);
+        setVisible(false);
+      } else {
+        userFeild.setText("");
+        passField.setText("");
+      }
+    }
+    if (ae.getSource() == back) {
+      Boot page = new Boot();
       page.setVisible(true);
       setVisible(false);
-    } else {
-      userFeild.setText("");
-      passField.setText("");
     }
   }
 
@@ -77,15 +87,3 @@ class Signin extends JFrame implements ActionListener, ItemListener {
     }
   }
 }
-
-// Test file l
-// class Signin {
-
-// public static void main(String arg[]) {
-// try {
-// CreateLoginForm form = new CreateLoginForm();
-// } catch (Exception e) {
-// JOptionPane.showMessageDialog(null, e.getMessage());
-// }
-// }
-// }
