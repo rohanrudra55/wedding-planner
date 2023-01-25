@@ -4,8 +4,9 @@
         "test",
         "database"
     ],
-    "java.project.outputPath": "bin",
+    "java.project.outputPath": "dist",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-    ]
+    ],
+    "maven.view": "flat"
 }

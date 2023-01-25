@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="Wedding Planer" default="dist" basedir=".">
+    <description>
+        simple example build file
+    </description>
+    <property name="src" location="src" />
+    <property name="build" location="build/classes" />
+    <property name="dist" location="dist" />
+    <property name="project" value="planer-v1" />
+    <target name="init">
+        <mkdir dir="${build}" />
+    </target>
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" />
+    </target>
+    <target name="dist" depends="compile">
+        <java classpath="${build}" classname="Welcome" fork="yes"></java>
+    </target>
+    <!-- <target name="dist" depends="run">
+        <mkdir dir="${dist}/lib" />
+        <java
+    classname="login"></java>
+        <jar jarfile="${dist}/lib/${project}.jar" basedir="${build}">
+    <manifest>
+                <attribute name="Main-Class" value="login" />
+            </manifest>
+    </jar>
+    </target> -->
+    <target name="clean" depends="dist">
+        <delete dir="${build}" />
+    </target>
+</project>
