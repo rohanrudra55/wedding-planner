@@ -1,38 +1,23 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.*;
-import java.util.Properties;
-class test {
-    public static void main(String[] args) {
-        Connection conn1 = null;
-        Connection conn2 = null;
-        Connection conn3 = null;
+public class database{
+    public static void main(String[]args){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/customer?allowPublicKeyRetrieval=true&useSSL=false", "root", "7029925877");
+            Statement stmt = con.createStatement();
 
-        try {
-            String url1 = "jdbc:mysql://localhost:3306/aavikme";
-            String user = "root";
-            String password = "aa";
-
-            conn1 = DriverManager.getConnection(url1, user, password);
-            if (conn1 != null)
-                System.out.println("Connected to the database test1");
-
-            String url2 = "jdbc:mysql://localhost:3306/aavikme?user=root&password=aa";
-            conn2 = DriverManager.getConnection(url2);
-            if (conn2 != null) {
-                System.out.println("Connected to the database test2");
+            ResultSet rs = stmt.executeQuery("show tables");
+            while(rs.next())
+            {
+                System.out.println(rs.getString(0));
             }
+            con.close();
 
-            String url3 = "jdbc:mysql://localhost:3306/aavikme";
-            Properties info = new Properties();
-            info.put("user", "root");
-            info.put("password", "aa");
-
-            conn3 = DriverManager.getConnection(url3, info);
-            if (conn3 != null) {
-                System.out.println("Connected to the database test3");
-            }
-        } catch (SQLException ex) {
-            System.out.println("An error occurred. Maybe user/password is invalid");
-            ex.printStackTrace();
+        }
+        catch(Exception e){
+            System.out.println(e);
         }
     }
 }

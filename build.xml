@@ -26,6 +26,11 @@
             </manifest>
     </jar>
     </target> -->
+
+    <!-- <target>
+        javac -cp "/Users/alpha/Documents/wedding-planner/lib/mysql-connector-j-8.0.32.jar:."
+        database.java
+    </target> -->
     <target name="clean" depends="dist">
         <delete dir="${build}" />
     </target>
