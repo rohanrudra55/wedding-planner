@@ -47,9 +47,6 @@
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[175, 103]"/>
         </Property>
-        <Property name="mixingCutoutShape" type="java.awt.Shape" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
       </Properties>
 
       <Layout>
@@ -87,34 +84,23 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jPswLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="jUsrNmLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jNmLable" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
-                              <Component id="jMbLabel" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jPswLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="jUsrNmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jUsrTypLable" min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jNamField" max="32767" attributes="0"/>
-                          <Component id="jMbFeild" alignment="0" max="32767" attributes="0"/>
                           <Component id="jUsrNmField" alignment="0" max="32767" attributes="0"/>
                           <Component id="jPswField" alignment="0" max="32767" attributes="0"/>
                           <Component id="jComboTyp" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                              <Component id="jSignupButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                              <Component id="jBackButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSigninButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBackButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                   </Group>
@@ -132,16 +118,6 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jNmLable" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jNamField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jMbLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jMbFeild" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jUsrNmLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jUsrNmField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -150,11 +126,11 @@
                           <Component id="jPswLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jPswField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
-                      <Component id="jSignupButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                      <Component id="jSigninButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jBackButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -189,32 +165,6 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jNmLable">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jMbLabel">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Mobile"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jNamField">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jMbFeild">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="jUsrNmField">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
@@ -225,12 +175,14 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jSignupButton">
+            <Component class="javax.swing.JButton" name="jSigninButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Signup"/>
+                <Property name="text" type="java.lang.String" value="Signin"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSignupButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSigninButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboTyp">
@@ -244,6 +196,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboTypActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -259,6 +214,10 @@
             <Component class="javax.swing.JButton" name="jBackButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Back"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBackButtonActionPerformed"/>
