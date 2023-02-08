@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Wedding_Planner">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Wedding_Planner.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
