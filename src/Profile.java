@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * The MIT License
  *
@@ -26,6 +27,8 @@
  *
  * @author alpha
  */
+=======
+>>>>>>> main
 import javax.swing.*;  
 import java.awt.*;  
 import java.awt.event.*;  
