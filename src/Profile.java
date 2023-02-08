@@ -1,4 +1,3 @@
-
 /*
  * The MIT License
  *
@@ -27,7 +26,7 @@
  *
  * @author alpha
  */
-
+ 
 class Profile{
     private String username;
     private String name;

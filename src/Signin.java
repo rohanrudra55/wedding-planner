@@ -1,4 +1,3 @@
-
 /*
  * The MIT License
  *
@@ -221,4 +220,5 @@ public class Signin extends javax.swing.JFrame {
     private javax.swing.JLabel jUsrTypLable;
     private javax.swing.JLabel jwelcome;
     // End of variables declaration//GEN-END:variables
-}
+    } 
+
