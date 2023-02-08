@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * The MIT License
  *
@@ -27,14 +26,7 @@
  *
  * @author alpha
  */
-=======
->>>>>>> main
-import javax.swing.*;  
-import java.awt.*;  
-import java.awt.event.*;  
-import java.lang.Exception;  
-import java.util.*;
-
+ 
 class Profile{
     private String username;
     private String name;

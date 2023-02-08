@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * The MIT License
  *
@@ -236,26 +235,4 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jUsrTypLable;
     private javax.swing.JLabel jwelcome;
     // End of variables declaration//GEN-END:variables
-=======
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.Exception;
-import javax.swing.*;
-
-class Signup extends JFrame {
-    JLabel msg;
-
-    Signup() {
-        System.out.println("REDIRECTED");
-        JPanel servicePanel = new JPanel();
-        msg = new JLabel();
-        msg.setText("Welcome");
-        servicePanel.add(msg);
-        setTitle("Planer-Signup");
-        add(servicePanel, BorderLayout.CENTER);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setVisible(true);
-    }
->>>>>>> main
 }
