@@ -27,7 +27,6 @@
  * @author alpha
  */
 public class Welcome extends javax.swing.JFrame {
-    public static Profile loggedUser=new Profile();
 
     public Welcome() {
         initComponents();

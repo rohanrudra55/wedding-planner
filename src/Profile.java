@@ -43,7 +43,7 @@ public class Profile {
         account = "admin";
     }
 
-    public static void setAccount(String account) {
+    public void setAccount(String account) {
         this.account = account;
         System.out.println("in profile");
     }
