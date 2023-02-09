@@ -26,85 +26,76 @@
  *
  * @author alpha
  */
-import java.awt.event.*;
 import javax.swing.*;
 
-public class Profile extends JFrame implements ActionListener{
-    private String username;
-    private String name;
-    private String mobile;
-    private String event;
-    private String password;
-    private String account;
-    
-    JTextField jNmLabel,jMbLabel,jUsrNmLabel,jPswLabel;
+public class Profile {
 
-    Profile(){
+    private static String username;
+    private static String name;
+    private static String mobile;
+    private static String event;
+    private static String password;
+    private static String account;
+
+    Profile() {
         username = "admin";
         password = "admin";
         account = "admin";
     }
 
-    
-    
-        public void setAccount(String account) {
-             this.account = account;
-             System.out.println("in profile");
-        }
-
-        public void setEvent(String event) {
-             this.event = event;
-        }
-//        String name = jNmLabel.getText();
-//        String mobile = jMbLabel.getText();
-//        String user = jUsrNmLabel.getText();
-//        String pswd = jPswLabel.getText();
-//        public void setMobile(String mobile) {
-//            this.mobile = mobile;
-//        }
-//
-//        public void setName(String name) {
-//            this.name = name;
-//        }
-//
-//        public void setPassword(String password) {
-//            this.password = password;
-//        }
-//
-//        public void setUsername(String username) {
-//           this.username = username;
-//        }
-//
-//        public String getName() {
-//           return name;
-//        }
-          try{
-              if(name.equals("")){
-                  JOptionPane.showMessageDialog(null,"Name is required");
-              }else{
-                  Conn c = new Conn();
-                  String query = "insert into signupdetails values('"+name+"','"+mobile+"','"+user+"','"+pswd+"')";
-                  c.s.executeUpdate(query);
-              }
-              
-          }catch(Exception e){
-              System.out.println(e);
-              
-          }
-
-    
+    public static void setAccount(String account) {
+        this.account = account;
+        System.out.println("in profile");
     }
 
-//    private boolean check(String input1, String input2) {
-//        return ((input1.trim().toLowerCase()).equals(input2.trim().toLowerCase()));
-//    }
-//    public boolean authenticate(String inputUsername,String inputPassword,String inputAccount){
-//        if (check(inputPassword, password) && check(inputAccount, account) && check(inputUsername, username)) {
-//            System.out.println("LOGGED IN");
-//            return true;
-//        }
-//        else{
-//            return false;
-//        }
-//    }
+    public void setEvent(String event) {
+        this.event = event;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void updateDB() {
+
+        try {
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name is required");
+            } else {
+                Conn c = new Conn();
+                String query = "insert into signupdetails values('" + name + "','" + mobile + "','" + username + "','" + password + "')";
+                c.s.executeUpdate(query);
+                System.out.println("Updated");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+    }
+
+    private boolean check(String input1, String input2) {
+        return ((input1.trim().toLowerCase()).equals(input2.trim().toLowerCase()));
+    }
+    public boolean authenticate(String inputUsername,String inputPassword,String inputAccount){
+        if (check(inputPassword, password) && check(inputAccount, account) && check(inputUsername, username)) {
+            System.out.println("LOGGED IN");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

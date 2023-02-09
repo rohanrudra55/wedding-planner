@@ -28,7 +28,6 @@
  */
 public class Signup extends javax.swing.JFrame {
 
-
     public Signup() {
         initComponents();
         setResizable(false);
@@ -211,9 +210,13 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_jBackButtonActionPerformed
 
     private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed
-        Profile loggedUser=new Profile();
         String typeValue = (String) jComboTyp.getSelectedItem();
+        Profile loggedUser = new Profile();
         loggedUser.setAccount(typeValue);
+        loggedUser.setName(jNamField.getText());
+        loggedUser.setPassword(jPswField.getText());
+        loggedUser.setUsername(jUsrNmField.getText());
+        loggedUser.updateDB();
     }//GEN-LAST:event_jSignupButtonActionPerformed
 
 
