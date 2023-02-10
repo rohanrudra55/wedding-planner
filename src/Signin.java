@@ -199,6 +199,13 @@ public class Signin extends javax.swing.JFrame {
             jUsrNmField.setText("");
             jPswField.setText("");
       }
+        loginAuthenticate.setPassword(pswValue);
+        loginAuthenticate.setUsername(userValue);
+        
+        String pass = loginAuthenticate.getPassword();
+        String usrname = loginAuthenticate.getUsername();
+//        loginAuthenticate.setUsername(userValue);
+        loginAuthenticate.getSigninDetails(pass,usrname);
     }//GEN-LAST:event_jSigninButtonActionPerformed
 
     private void jComboTypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTypActionPerformed

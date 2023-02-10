@@ -217,6 +217,7 @@ public class Signup extends javax.swing.JFrame {
         loggedUser.setPassword(jPswField.getText());
         loggedUser.setUsername(jUsrNmField.getText());
         loggedUser.updateDB();
+        loggedUser.getDetails();
     }//GEN-LAST:event_jSignupButtonActionPerformed
 
 
