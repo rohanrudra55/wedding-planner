@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 /**
  *
  * @author alpha
  */
-public class Welcome extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
+public class Database extends javax.swing.JFrame {
 
-    public Welcome() {
+    public Database() {
         initComponents();
         setResizable(false);
     }
@@ -40,9 +40,12 @@ public class Welcome extends javax.swing.JFrame {
         jDesktopPane = new javax.swing.JDesktopPane();
         jCenterPanel = new javax.swing.JPanel();
         jwelcome = new javax.swing.JLabel();
-        jDBButton = new javax.swing.JButton();
-        jSignupButton = new javax.swing.JButton();
-        jSigninButton = new javax.swing.JButton();
+        jUsrNmLabel = new javax.swing.JLabel();
+        jPswLabel = new javax.swing.JLabel();
+        jUsrNmField = new javax.swing.JTextField();
+        jPswField = new javax.swing.JPasswordField();
+        jConnectButton = new javax.swing.JButton();
+        jBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,30 +56,37 @@ public class Welcome extends javax.swing.JFrame {
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
 
-        jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jwelcome.setText("Welcome");
+        jwelcome.setText("MySQL");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
 
-        jDBButton.setText("Connect");
-        jDBButton.addActionListener(new java.awt.event.ActionListener() {
+        jUsrNmLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jUsrNmLabel.setText("Username");
+
+        jPswLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jPswLabel.setText("Password");
+
+        jUsrNmField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jPswField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jConnectButton.setText("Connect");
+        jConnectButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jConnectButton.setName(""); // NOI18N
+        jConnectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jDBButtonActionPerformed(evt);
+                jConnectButtonActionPerformed(evt);
             }
         });
 
-        jSignupButton.setText("Signup");
-        jSignupButton.addActionListener(new java.awt.event.ActionListener() {
+        jBackButton.setText("Back");
+        jBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jBackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSignupButtonActionPerformed(evt);
-            }
-        });
-
-        jSigninButton.setText("Signin");
-        jSigninButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSigninButtonActionPerformed(evt);
+                jBackButtonActionPerformed(evt);
             }
         });
 
@@ -84,27 +94,42 @@ public class Welcome extends javax.swing.JFrame {
         jCenterPanel.setLayout(jCenterPanelLayout);
         jCenterPanelLayout.setHorizontalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
+                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPswLabel)
+                    .addComponent(jUsrNmLabel))
+                .addGap(89, 89, 89)
+                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jUsrNmField)
+                    .addComponent(jPswField))
+                .addGap(50, 50, 50))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
+                .addGap(154, 154, 154)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jDBButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSigninButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSignupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jConnectButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(154, 154, 154))
         );
         jCenterPanelLayout.setVerticalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCenterPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jwelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(jDBButton)
+                .addComponent(jwelcome)
+                .addGap(68, 68, 68)
+                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jUsrNmLabel)
+                    .addComponent(jUsrNmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jSigninButton)
+                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPswLabel)
+                    .addComponent(jPswField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(jConnectButton)
                 .addGap(18, 18, 18)
-                .addComponent(jSignupButton)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addComponent(jBackButton)
+                .addGap(60, 60, 60))
         );
 
         jDesktopPane.setLayer(jCenterPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -140,39 +165,32 @@ public class Welcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jDBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDBButtonActionPerformed
-        Database page = new Database();
-        page.setVisible(true);
-        setVisible(false);
-    }//GEN-LAST:event_jDBButtonActionPerformed
+    private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackButtonActionPerformed
+        welcomepage();
+    }//GEN-LAST:event_jBackButtonActionPerformed
 
-    private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed
-        Signup active = new Signup();
+    private void jConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConnectButtonActionPerformed
+       Connect tmp=new Connect();
+       tmp.setRoot(jUsrNmField.getText());
+       tmp.setPassword(jPswField.getText());
+       welcomepage();
+    }//GEN-LAST:event_jConnectButtonActionPerformed
+    
+    private void welcomepage(){
+        Welcome active = new Welcome();
         active.setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_jSignupButtonActionPerformed
-
-    private void jSigninButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSigninButtonActionPerformed
-        Signin active = new Signin();
-        active.setVisible(true);
-        setVisible(false);
-    }//GEN-LAST:event_jSigninButtonActionPerformed
-
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Welcome().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBackButton;
     private javax.swing.JPanel jCenterPanel;
-    private javax.swing.JButton jDBButton;
+    private javax.swing.JButton jConnectButton;
     private javax.swing.JDesktopPane jDesktopPane;
-    private javax.swing.JButton jSigninButton;
-    private javax.swing.JButton jSignupButton;
+    private javax.swing.JPasswordField jPswField;
+    private javax.swing.JLabel jPswLabel;
+    private javax.swing.JTextField jUsrNmField;
+    private javax.swing.JLabel jUsrNmLabel;
     private javax.swing.JLabel jwelcome;
     // End of variables declaration//GEN-END:variables
 }

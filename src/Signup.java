@@ -220,7 +220,7 @@ public class Signup extends javax.swing.JFrame {
         loggedUser.setUsername(jUsrNmField.getText());
         loggedUser.setMobile(jMbFeild.getText());
         loggedUser.update();
-        Signin page=new Signin();
+        Signin page = new Signin();
         page.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jSignupButtonActionPerformed

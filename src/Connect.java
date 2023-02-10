@@ -30,18 +30,43 @@ import java.sql.*;
 
 public class Connect {
 
+    private static String root;
+    private static String password;
+
     Connection con;
     Statement state;
 
     public Connect() {
         try {
+            String query = "CREATE DATABASE weddingsys;\n"
+                    + "USE weddingsys;\n"
+                    + "DROP TABLE IF EXISTS `signupdetails`;\n"
+                    + "CREATE TABLE `signupdetails` (\n"
+                    + "  `name` varchar(20) DEFAULT NULL,\n"
+                    + "  `mobile` varchar(10) DEFAULT NULL,\n"
+                    + "  `user` varchar(20) DEFAULT NULL,\n"
+                    + "  `pswd` varchar(25) DEFAULT NULL\n"
+                    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\n" 
+                    + "LOCK TABLES `signupdetails` WRITE;\n"
+                    + "INSERT INTO `signupdetails` VALUES ('aditi','1234','aditi','1234');\n"
+                    + "UNLOCK TABLES;";
 
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql:///Weddingsys", "root", "7029925977");
+//            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/weddingsys", root, password);
             state = con.createStatement();
+            state.executeQuery(query);
 
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void setRoot(String input) {
+        root = input;
+    }
+
+    public void setPassword(String input) {
+        password = input;
     }
 }
