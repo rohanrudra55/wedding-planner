@@ -25,7 +25,7 @@
  *
  * @author alpha
  */
-import javax.swing.JOptionPane;
+
 public class Database extends javax.swing.JFrame {
 
     public Database() {
@@ -170,13 +170,14 @@ public class Database extends javax.swing.JFrame {
     }//GEN-LAST:event_jBackButtonActionPerformed
 
     private void jConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConnectButtonActionPerformed
-       Connect tmp=new Connect();
-       tmp.setRoot(jUsrNmField.getText());
-       tmp.setPassword(jPswField.getText());
-       welcomepage();
+
+        Connect.setRoot(jUsrNmField.getText());
+        Connect.setPassword(jPswField.getText());
+        Connect create = new Connect();
+        welcomepage();
     }//GEN-LAST:event_jConnectButtonActionPerformed
-    
-    private void welcomepage(){
+
+    private void welcomepage() {
         Welcome active = new Welcome();
         active.setVisible(true);
         setVisible(false);

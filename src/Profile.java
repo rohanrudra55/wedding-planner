@@ -38,7 +38,6 @@ public class Profile {
     private static String password;
     private static String account;
     private static int check;
-    static Connect db = new Connect();
 
     Profile() {
         username = "admin";
@@ -98,7 +97,7 @@ public class Profile {
                 JOptionPane.showMessageDialog(null, "Empty feild !");
             } else {
                 String query = "insert into signupdetails values('" + name + "','" + mobile + "','" + username + "','" + password + "')";
-                db.state.executeUpdate(query);
+                Connect.state.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Registered !");
             }
 
@@ -112,7 +111,7 @@ public class Profile {
 
             String query = "SELECT * FROM signupdetails";
 
-            ResultSet rs = db.state.executeQuery(query);
+            ResultSet rs = Connect.state.executeQuery(query);
             while (rs.next()) {
                 name = rs.getString("name");
                 mobile = rs.getString("mobile");

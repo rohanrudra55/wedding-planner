@@ -34,39 +34,31 @@ public class Connect {
     private static String password;
 
     Connection con;
-    Statement state;
+    static Statement state;
 
     public Connect() {
         try {
-            String query = "CREATE DATABASE weddingsys;\n"
-                    + "USE weddingsys;\n"
-                    + "DROP TABLE IF EXISTS `signupdetails`;\n"
-                    + "CREATE TABLE `signupdetails` (\n"
-                    + "  `name` varchar(20) DEFAULT NULL,\n"
-                    + "  `mobile` varchar(10) DEFAULT NULL,\n"
-                    + "  `user` varchar(20) DEFAULT NULL,\n"
-                    + "  `pswd` varchar(25) DEFAULT NULL\n"
-                    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\n" 
-                    + "LOCK TABLES `signupdetails` WRITE;\n"
-                    + "INSERT INTO `signupdetails` VALUES ('aditi','1234','aditi','1234');\n"
-                    + "UNLOCK TABLES;";
+            String query1 = "USE weddingsys;";
+            String query2 = "DROP TABLE IF EXISTS `signupdetails`;";
+            String query3 = "CREATE TABLE `signupdetails` ( `name` varchar(20) DEFAULT NULL,`mobile` varchar(10) DEFAULT NULL,`user` varchar(20) DEFAULT NULL,`pswd` varchar(25) DEFAULT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 
-//            Class.forName("com.mysql.jdbc.Driver");
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql:///weddingsys?createDatabaseIfNotExist=true", root, password);
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/weddingsys?createDatabaseIfNotExist=true", root, password);
             state = con.createStatement();
-            state.executeQuery(query);
+            state.executeUpdate(query1);
+            state.executeUpdate(query2);
+            state.executeUpdate(query3);
 
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public void setRoot(String input) {
+    public static void setRoot(String input) {
         root = input;
     }
 
-    public void setPassword(String input) {
+    public static void setPassword(String input) {
         password = input;
     }
 }
