@@ -52,8 +52,9 @@ public class Signin extends javax.swing.JFrame {
         jBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 0, 102));
 
-        jDesktopPane.setBackground(new java.awt.Color(0, 102, 153));
+        jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
         jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
@@ -202,9 +203,8 @@ public class Signin extends javax.swing.JFrame {
             jPswField.setText("");
         } else {
             JOptionPane.showMessageDialog(null, "Signed");
-          
-            form Form=new form();
-            Form.setVisible(true);
+            Menu active=new Menu();
+            active.setVisible(true);
             setVisible(false);
         }
     }//GEN-LAST:event_jSigninButtonActionPerformed

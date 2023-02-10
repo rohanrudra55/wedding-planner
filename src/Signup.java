@@ -55,7 +55,7 @@ public class Signup extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane.setBackground(new java.awt.Color(0, 102, 153));
+        jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
         jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
@@ -130,13 +130,10 @@ public class Signup extends javax.swing.JFrame {
                     .addComponent(jComboTyp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
             .addGroup(jCenterPanelLayout.createSequentialGroup()
+                .addGap(154, 154, 154)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jCenterPanelLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jSignupButton))
-                    .addGroup(jCenterPanelLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBackButton)))
+                    .addComponent(jSignupButton)
+                    .addComponent(jBackButton))
                 .addGap(154, 154, 154))
         );
         jCenterPanelLayout.setVerticalGroup(

@@ -49,7 +49,7 @@ public class Database extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane.setBackground(new java.awt.Color(0, 102, 153));
+        jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
         jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
