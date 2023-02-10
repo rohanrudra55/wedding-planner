@@ -31,11 +31,13 @@ import java.sql.*;
 public class Conn{
     Connection c;
     Statement s;
+    ResultSet rs;
     public Conn(){  
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             c =DriverManager.getConnection("jdbc:mysql:///Wedding_planner_System","root","abc");    
             s =c.createStatement(); 
+            
            
           
             

@@ -27,6 +27,7 @@
  * @author alpha
  */
 import javax.swing.*;
+import java.sql.*;
 
 public class Profile {
 
@@ -67,6 +68,12 @@ public class Profile {
     public String getName() {
         return name;
     }
+    public String getUsername() {
+        return username;
+    }
+    public String getPassword() {
+        return password;
+    }
 
     public void updateDB() {
 
@@ -85,6 +92,56 @@ public class Profile {
 
         }
     }
+    public void getDetails(){
+        try{
+            
+            
+            Conn c = new Conn();
+            String query ="SELECT * FROM signupdetails";
+            
+            ResultSet rs = c.s.executeQuery(query);
+            while(rs.next()){
+                name = rs.getString("name");
+                mobile = rs.getString("mobile");
+                username = rs.getString("user");
+                password = rs.getString("pswd");
+            }
+            System.out.println("Query passed to retrieve data");
+            System.out.println("User name: "+ name);
+            System.out.println("User mobile: "+ mobile);
+            System.out.println("User username: "+ username);
+            System.out.println("User password: "+ password);
+            
+        }catch (Exception e){
+            System.out.println(e);
+            
+        }
+        
+    }
+    
+    public void getSigninDetails(String pass, String usrname){
+        try{
+//            String pass = jPswField.getText();
+            
+            
+            Conn c = new Conn();
+            String query ="SELECT user, pswd from signupdetails where user='"+usrname+"'";
+            
+            ResultSet rs = c.s.executeQuery(query);
+            if(pass.equals(rs.getString("pswd"))){
+                JOptionPane.showMessageDialog(null, "Login successful");
+            }else{
+                JOptionPane.showMessageDialog(null, "Login Failed, please try again");
+                
+            }
+            
+            
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+            
+        }
+    }
+    
 
     private boolean check(String input1, String input2) {
         return ((input1.trim().toLowerCase()).equals(input2.trim().toLowerCase()));
