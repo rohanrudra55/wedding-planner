@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * The MIT License
  *
@@ -21,18 +24,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 /**
  *
  * @author alpha
  */
 public class Signin extends javax.swing.JFrame {
 
-
     public Signin() {
         initComponents();
         setResizable(false);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -184,7 +186,7 @@ public class Signin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackButtonActionPerformed
-        Welcome active=new Welcome();
+        Welcome active = new Welcome();
         active.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jBackButtonActionPerformed
@@ -193,19 +195,21 @@ public class Signin extends javax.swing.JFrame {
         String userValue = jUsrNmField.getText();
         String pswValue = jPswField.getText();
         String typeValue = (String) jComboTyp.getSelectedItem();
-        
+
         Profile loginAuthenticate = new Profile();
-        if ( !(loginAuthenticate.authenticate(userValue, pswValue, typeValue)) ) {
+        if (!(loginAuthenticate.authenticate(userValue, pswValue, typeValue))) {
             jUsrNmField.setText("");
             jPswField.setText("");
-      }
-        loginAuthenticate.setPassword(pswValue);
-        loginAuthenticate.setUsername(userValue);
-        
-        String pass = loginAuthenticate.getPassword();
-        String usrname = loginAuthenticate.getUsername();
+        } else {
+            JOptionPane.showMessageDialog(null, "Signedin");
+        }
+
+//        loginAuthenticate.setPassword(pswValue);
 //        loginAuthenticate.setUsername(userValue);
-        loginAuthenticate.getSigninDetails(pass,usrname);
+//        String pass = loginAuthenticate.getPassword();
+//        String usrname = loginAuthenticate.getUsername();
+//        loginAuthenticate.setUsername(userValue);
+//        loginAuthenticate.getSigninDetails(pass,usrname);
     }//GEN-LAST:event_jSigninButtonActionPerformed
 
     private void jComboTypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTypActionPerformed

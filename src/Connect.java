@@ -26,23 +26,22 @@
  *
  * @author ADITI MANDAL
  */
-import java.sql.*;  
+import java.sql.*;
 
-public class Conn{
-    Connection c;
-    Statement s;
-    ResultSet rs;
-    public Conn(){  
-        try{  
-            Class.forName("com.mysql.jdbc.Driver");  
-            c =DriverManager.getConnection("jdbc:mysql:///Wedding_planner_System","root","abc");    
-            s =c.createStatement(); 
-            
-           
-          
-            
-        }catch(Exception e){ 
+public class Connect {
+
+    Connection con;
+    Statement state;
+
+    public Connect() {
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql:///Weddingsys", "root", "7029925977");
+            state = con.createStatement();
+
+        } catch (Exception e) {
             System.out.println(e);
-        }  
-    }  
-}  
+        }
+    }
+}

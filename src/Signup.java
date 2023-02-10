@@ -32,6 +32,7 @@ public class Signup extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -204,7 +205,7 @@ public class Signup extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackButtonActionPerformed
-        Welcome active=new Welcome();
+        Welcome active = new Welcome();
         active.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jBackButtonActionPerformed
@@ -212,14 +213,17 @@ public class Signup extends javax.swing.JFrame {
     private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed
         String typeValue = (String) jComboTyp.getSelectedItem();
         Profile loggedUser = new Profile();
+        loggedUser.resetChecker();
         loggedUser.setAccount(typeValue);
         loggedUser.setName(jNamField.getText());
         loggedUser.setPassword(jPswField.getText());
         loggedUser.setUsername(jUsrNmField.getText());
-        loggedUser.updateDB();
-        loggedUser.getDetails();
+        loggedUser.setMobile(jMbFeild.getText());
+        loggedUser.update();
+        Signin page=new Signin();
+        page.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jSignupButtonActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

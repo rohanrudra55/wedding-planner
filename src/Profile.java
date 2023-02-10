@@ -37,6 +37,8 @@ public class Profile {
     private static String event;
     private static String password;
     private static String account;
+    private static int check;
+    static Connect db = new Connect();
 
     Profile() {
         username = "admin";
@@ -44,9 +46,13 @@ public class Profile {
         account = "admin";
     }
 
+    public void resetChecker() {
+        check = 0;
+    }
+
     public void setAccount(String account) {
         this.account = account;
-        System.out.println("in profile");
+        check++;
     }
 
     public void setEvent(String event) {
@@ -55,103 +61,83 @@ public class Profile {
 
     public void setName(String name) {
         this.name = name;
+        check++;
     }
 
     public void setPassword(String password) {
         this.password = password;
+        check++;
     }
 
     public void setUsername(String username) {
         this.username = username;
+        check++;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+        check++;
     }
 
     public String getName() {
         return name;
     }
+
     public String getUsername() {
         return username;
     }
+
     public String getPassword() {
         return password;
     }
 
-    public void updateDB() {
+    public void update() {
 
         try {
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name is required");
+            if (check < 4) {
+                JOptionPane.showMessageDialog(null, "Empty feild !");
             } else {
-                Conn c = new Conn();
                 String query = "insert into signupdetails values('" + name + "','" + mobile + "','" + username + "','" + password + "')";
-                c.s.executeUpdate(query);
-                System.out.println("Updated");
+                db.state.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "Registered !");
             }
 
         } catch (Exception e) {
-            System.out.println(e);
-
+            JOptionPane.showMessageDialog(null, e);
         }
     }
-    public void getDetails(){
-        try{
-            
-            
-            Conn c = new Conn();
-            String query ="SELECT * FROM signupdetails";
-            
-            ResultSet rs = c.s.executeQuery(query);
-            while(rs.next()){
+
+    private boolean getDetails(String inputUser) {
+        try {
+
+            String query = "SELECT * FROM signupdetails";
+
+            ResultSet rs = db.state.executeQuery(query);
+            while (rs.next()) {
                 name = rs.getString("name");
                 mobile = rs.getString("mobile");
                 username = rs.getString("user");
                 password = rs.getString("pswd");
+                if (check(username, inputUser)) {
+                    return true;
+                }
             }
-            System.out.println("Query passed to retrieve data");
-            System.out.println("User name: "+ name);
-            System.out.println("User mobile: "+ mobile);
-            System.out.println("User username: "+ username);
-            System.out.println("User password: "+ password);
-            
-        }catch (Exception e){
-            System.out.println(e);
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
-        
+        return false;
     }
-    
-    public void getSigninDetails(String pass, String usrname){
-        try{
-//            String pass = jPswField.getText();
-            
-            
-            Conn c = new Conn();
-            String query ="SELECT user, pswd from signupdetails where user='"+usrname+"'";
-            
-            ResultSet rs = c.s.executeQuery(query);
-            if(pass.equals(rs.getString("pswd"))){
-                JOptionPane.showMessageDialog(null, "Login successful");
-            }else{
-                JOptionPane.showMessageDialog(null, "Login Failed, please try again");
-                
-            }
-            
-            
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null,e);
-            
-        }
-    }
-    
 
     private boolean check(String input1, String input2) {
         return ((input1.trim().toLowerCase()).equals(input2.trim().toLowerCase()));
     }
-    public boolean authenticate(String inputUsername,String inputPassword,String inputAccount){
-        if (check(inputPassword, password) && check(inputAccount, account) && check(inputUsername, username)) {
-            System.out.println("LOGGED IN");
+
+    public boolean authenticate(String inputUsername, String inputPassword, String inputAccount) {
+        if (getDetails(inputUsername) && check(inputPassword, password) && check(inputAccount, account)) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
