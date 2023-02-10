@@ -202,6 +202,10 @@ public class Signin extends javax.swing.JFrame {
             jPswField.setText("");
         } else {
             JOptionPane.showMessageDialog(null, "Signed");
+          
+            form Form=new form();
+            Form.setVisible(true);
+            setVisible(false);
         }
     }//GEN-LAST:event_jSigninButtonActionPerformed
 
