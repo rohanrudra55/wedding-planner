@@ -31,6 +31,7 @@ public class Database extends javax.swing.JFrame {
     public Database() {
         initComponents();
         setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -51,8 +52,8 @@ public class Database extends javax.swing.JFrame {
 
         jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
-        jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
+        jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
 
@@ -141,7 +142,7 @@ public class Database extends javax.swing.JFrame {
             .addGroup(jDesktopPaneLayout.createSequentialGroup()
                 .addGap(247, 247, 247)
                 .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,11 +156,11 @@ public class Database extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

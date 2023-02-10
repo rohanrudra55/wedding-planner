@@ -31,6 +31,7 @@ public class Signup extends javax.swing.JFrame {
     public Signup() {
         initComponents();
         setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -59,12 +60,13 @@ public class Signup extends javax.swing.JFrame {
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
         jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
+        jDesktopPane.setPreferredSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
 
         jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jwelcome.setText("Welcome");
+        jwelcome.setText("Sign Up");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
 
@@ -191,7 +193,7 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

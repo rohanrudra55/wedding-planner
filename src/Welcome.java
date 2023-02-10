@@ -26,11 +26,16 @@
  *
  * @author alpha
  */
+import javax.swing.*;
+import java.awt.*;
 public class Welcome extends javax.swing.JFrame {
 
     public Welcome() {
         initComponents();
+        UIManager.put("Window", new javax.swing.plaf.ColorUIResource(Color.YELLOW));
+        setDefaultLookAndFeelDecorated(true);
         setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -48,8 +53,9 @@ public class Welcome extends javax.swing.JFrame {
 
         jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
-        jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
+        jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setPreferredSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
 
@@ -130,11 +136,11 @@ public class Welcome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
