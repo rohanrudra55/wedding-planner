@@ -53,7 +53,7 @@ public class Connect {
 
 //            Class.forName("com.mysql.jdbc.Driver");
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/weddingsys", root, password);
+            con = DriverManager.getConnection("jdbc:mysql:///weddingsys?createDatabaseIfNotExist=true", root, password);
             state = con.createStatement();
             state.executeQuery(query);
 
