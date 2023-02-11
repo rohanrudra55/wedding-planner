@@ -32,8 +32,12 @@ public class Welcome extends javax.swing.JFrame {
 
     public Welcome() {
         initComponents();
+        // To change the title bar color         
         UIManager.put("Window", new javax.swing.plaf.ColorUIResource(Color.YELLOW));
         setDefaultLookAndFeelDecorated(true);
+        //
+        
+        // setSize(Toolkit.getDefaultToolkit().getScreenSize());
         setResizable(false);
         setLocationRelativeTo(null);
     }
@@ -56,30 +60,40 @@ public class Welcome extends javax.swing.JFrame {
         jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
         jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
         jDesktopPane.setPreferredSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
+        jCenterPanel.setMaximumSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setMinimumSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setSize(new java.awt.Dimension(378, 400));
 
-        jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("Welcome");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
 
+        jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jDBButton.setText("Connect");
+        jDBButton.setSize(new java.awt.Dimension(78, 22));
         jDBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDBButtonActionPerformed(evt);
             }
         });
 
+        jSignupButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSignupButton.setText("Signup");
+        jSignupButton.setSize(new java.awt.Dimension(78, 22));
         jSignupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSignupButtonActionPerformed(evt);
             }
         });
 
+        jSigninButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSigninButton.setText("Signin");
+        jSigninButton.setSize(new java.awt.Dimension(78, 22));
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
@@ -90,14 +104,14 @@ public class Welcome extends javax.swing.JFrame {
         jCenterPanel.setLayout(jCenterPanelLayout);
         jCenterPanelLayout.setHorizontalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(150, 150, 150)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jDBButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSigninButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSignupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(154, 154, 154))
+                .addGap(150, 150, 150))
         );
         jCenterPanelLayout.setVerticalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

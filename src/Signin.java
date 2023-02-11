@@ -57,13 +57,18 @@ public class Signin extends javax.swing.JFrame {
 
         jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(1750, 1030));
-        jDesktopPane.setMinimumSize(new java.awt.Dimension(175, 103));
+        jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
         jDesktopPane.setPreferredSize(new java.awt.Dimension(880, 515));
+        jDesktopPane.setSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
+        jCenterPanel.setMaximumSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setMinimumSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setPreferredSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setSize(new java.awt.Dimension(378, 400));
 
-        jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("Sign In");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -71,17 +76,34 @@ public class Signin extends javax.swing.JFrame {
 
         jUsrNmLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jUsrNmLabel.setText("Username");
+        jUsrNmLabel.setSize(new java.awt.Dimension(83, 23));
 
         jPswLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jPswLabel.setText("Password");
+        jPswLabel.setMaximumSize(new java.awt.Dimension(83, 23));
+        jPswLabel.setMinimumSize(new java.awt.Dimension(83, 23));
+        jPswLabel.setPreferredSize(new java.awt.Dimension(83, 23));
+        jPswLabel.setSize(new java.awt.Dimension(83, 23));
 
         jUsrNmField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jUsrNmField.setMaximumSize(new java.awt.Dimension(190, 23));
+        jUsrNmField.setMinimumSize(new java.awt.Dimension(190, 23));
+        jUsrNmField.setPreferredSize(new java.awt.Dimension(190, 23));
 
         jPswField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPswField.setMaximumSize(new java.awt.Dimension(190, 23));
+        jPswField.setMinimumSize(new java.awt.Dimension(190, 23));
+        jPswField.setOpaque(true);
+        jPswField.setPreferredSize(new java.awt.Dimension(190, 23));
+        jPswField.setSize(new java.awt.Dimension(190, 23));
 
         jSigninButton.setText("Signin");
         jSigninButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jSigninButton.setMaximumSize(new java.awt.Dimension(78, 22));
+        jSigninButton.setMinimumSize(new java.awt.Dimension(78, 22));
         jSigninButton.setName(""); // NOI18N
+        jSigninButton.setPreferredSize(new java.awt.Dimension(78, 22));
+        jSigninButton.setSize(new java.awt.Dimension(78, 22));
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
@@ -89,6 +111,10 @@ public class Signin extends javax.swing.JFrame {
         });
 
         jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
+        jComboTyp.setMaximumSize(new java.awt.Dimension(190, 23));
+        jComboTyp.setMinimumSize(new java.awt.Dimension(190, 23));
+        jComboTyp.setPreferredSize(new java.awt.Dimension(190, 23));
+        jComboTyp.setSize(new java.awt.Dimension(190, 23));
         jComboTyp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboTypActionPerformed(evt);
@@ -97,10 +123,15 @@ public class Signin extends javax.swing.JFrame {
 
         jUsrTypLable.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jUsrTypLable.setText("User Type");
+        jUsrTypLable.setSize(new java.awt.Dimension(83, 23));
 
         jBackButton.setText("Back");
         jBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBackButton.setMaximumSize(new java.awt.Dimension(78, 22));
+        jBackButton.setMinimumSize(new java.awt.Dimension(78, 22));
+        jBackButton.setPreferredSize(new java.awt.Dimension(78, 22));
+        jBackButton.setSize(new java.awt.Dimension(78, 22));
         jBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBackButtonActionPerformed(evt);
@@ -111,25 +142,25 @@ public class Signin extends javax.swing.JFrame {
         jCenterPanel.setLayout(jCenterPanelLayout);
         jCenterPanelLayout.setHorizontalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPswLabel)
+                    .addComponent(jPswLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jUsrNmLabel)
                     .addComponent(jUsrTypLable, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(89, 89, 89)
+                .addGap(6, 6, 6)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jUsrNmField)
-                    .addComponent(jPswField)
-                    .addComponent(jComboTyp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jUsrNmField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboTyp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPswField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
+                .addGap(150, 150, 150)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSigninButton)
-                    .addComponent(jBackButton))
-                .addGap(154, 154, 154))
+                    .addComponent(jSigninButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(150, 150, 150))
+            .addComponent(jwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jCenterPanelLayout.setVerticalGroup(
             jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,20 +170,20 @@ public class Signin extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jComboTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUsrTypLable))
+                    .addComponent(jUsrTypLable, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jUsrNmLabel)
                     .addComponent(jUsrNmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPswLabel)
+                    .addComponent(jPswLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPswField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jSigninButton)
+                .addGap(85, 85, 85)
+                .addComponent(jSigninButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBackButton)
-                .addGap(60, 60, 60))
+                .addComponent(jBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
         jDesktopPane.setLayer(jCenterPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -178,11 +209,11 @@ public class Signin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
