@@ -40,122 +40,98 @@ public class Welcome extends javax.swing.JFrame {
         // setSize(Toolkit.getDefaultToolkit().getScreenSize());
         setResizable(false);
         setLocationRelativeTo(null);
+        jSidePanel.setBackground(new  Color(153,0,102,60));
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jDesktopPane = new javax.swing.JDesktopPane();
+        jSidePanel = new javax.swing.JPanel();
         jCenterPanel = new javax.swing.JPanel();
         jwelcome = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jDBButton = new javax.swing.JButton();
         jSignupButton = new javax.swing.JButton();
         jSigninButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Planer");
+        setBackground(new java.awt.Color(153, 0, 102));
+        setMaximumSize(new java.awt.Dimension(880, 515));
+        setMinimumSize(new java.awt.Dimension(880, 515));
+        setPreferredSize(new java.awt.Dimension(880, 515));
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
-        jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
-        jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
-        jDesktopPane.setPreferredSize(new java.awt.Dimension(880, 515));
-        jDesktopPane.setSize(new java.awt.Dimension(880, 515));
+        jSidePanel.setBackground(new java.awt.Color(153, 0, 102));
 
-        jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
+        javax.swing.GroupLayout jSidePanelLayout = new javax.swing.GroupLayout(jSidePanel);
+        jSidePanel.setLayout(jSidePanelLayout);
+        jSidePanelLayout.setHorizontalGroup(
+            jSidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 408, Short.MAX_VALUE)
+        );
+        jSidePanelLayout.setVerticalGroup(
+            jSidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jSidePanel);
+
         jCenterPanel.setMaximumSize(new java.awt.Dimension(378, 400));
         jCenterPanel.setMinimumSize(new java.awt.Dimension(378, 400));
-        jCenterPanel.setSize(new java.awt.Dimension(378, 400));
+        jCenterPanel.setLayout(new java.awt.GridBagLayout());
 
-        jwelcome.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("Welcome");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 100;
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 25);
+        jCenterPanel.add(jwelcome, gridBagConstraints);
+
+        jPanel2.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
 
         jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jDBButton.setText("Connect");
-        jDBButton.setSize(new java.awt.Dimension(78, 22));
         jDBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDBButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(jDBButton);
 
         jSignupButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSignupButton.setText("Signup");
-        jSignupButton.setSize(new java.awt.Dimension(78, 22));
         jSignupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSignupButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(jSignupButton);
 
         jSigninButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSigninButton.setText("Signin");
-        jSigninButton.setSize(new java.awt.Dimension(78, 22));
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(jSigninButton);
 
-        javax.swing.GroupLayout jCenterPanelLayout = new javax.swing.GroupLayout(jCenterPanel);
-        jCenterPanel.setLayout(jCenterPanelLayout);
-        jCenterPanelLayout.setHorizontalGroup(
-            jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jDBButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSigninButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSignupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(150, 150, 150))
-        );
-        jCenterPanelLayout.setVerticalGroup(
-            jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jCenterPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jwelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(jDBButton)
-                .addGap(18, 18, 18)
-                .addComponent(jSigninButton)
-                .addGap(18, 18, 18)
-                .addComponent(jSignupButton)
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(86, 0, 86, 0);
+        jCenterPanel.add(jPanel2, gridBagConstraints);
 
-        jDesktopPane.setLayer(jCenterPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
-        jDesktopPane.setLayout(jDesktopPaneLayout);
-        jDesktopPaneLayout.setHorizontalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPaneLayout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247))
-        );
-        jDesktopPaneLayout.setVerticalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPaneLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jCenterPanel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,7 +166,8 @@ public class Welcome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jCenterPanel;
     private javax.swing.JButton jDBButton;
-    private javax.swing.JDesktopPane jDesktopPane;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jSidePanel;
     private javax.swing.JButton jSigninButton;
     private javax.swing.JButton jSignupButton;
     private javax.swing.JLabel jwelcome;
