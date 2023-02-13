@@ -37,14 +37,17 @@ public class Database extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jDesktopPane = new javax.swing.JDesktopPane();
         jCenterPanel = new javax.swing.JPanel();
         jwelcome = new javax.swing.JLabel();
+        jInputPanel = new javax.swing.JPanel();
         jUsrNmLabel = new javax.swing.JLabel();
-        jPswLabel = new javax.swing.JLabel();
         jUsrNmField = new javax.swing.JTextField();
+        jPswLabel = new javax.swing.JLabel();
         jPswField = new javax.swing.JPasswordField();
+        jButtonPanel = new javax.swing.JPanel();
         jConnectButton = new javax.swing.JButton();
         jBackButton = new javax.swing.JButton();
 
@@ -56,22 +59,48 @@ public class Database extends javax.swing.JFrame {
         jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
 
         jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
+        jCenterPanel.setLayout(new java.awt.GridBagLayout());
 
         jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("MySQL");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(48, 102, 48, 102);
+        jCenterPanel.add(jwelcome, gridBagConstraints);
+
+        jInputPanel.setLayout(new java.awt.GridLayout(2, 2, 20, 20));
 
         jUsrNmLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jUsrNmLabel.setText("Username");
+        jInputPanel.add(jUsrNmLabel);
+
+        jUsrNmField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jInputPanel.add(jUsrNmField);
 
         jPswLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jPswLabel.setText("Password");
-
-        jUsrNmField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jInputPanel.add(jPswLabel);
 
         jPswField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jInputPanel.add(jPswField);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(50, 50, 50, 50);
+        jCenterPanel.add(jInputPanel, gridBagConstraints);
+
+        jButtonPanel.setLayout(new java.awt.GridLayout(2, 0, 0, 20));
 
         jConnectButton.setText("Connect");
         jConnectButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -81,6 +110,7 @@ public class Database extends javax.swing.JFrame {
                 jConnectButtonActionPerformed(evt);
             }
         });
+        jButtonPanel.add(jConnectButton);
 
         jBackButton.setText("Back");
         jBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -90,48 +120,16 @@ public class Database extends javax.swing.JFrame {
                 jBackButtonActionPerformed(evt);
             }
         });
+        jButtonPanel.add(jBackButton);
 
-        javax.swing.GroupLayout jCenterPanelLayout = new javax.swing.GroupLayout(jCenterPanel);
-        jCenterPanel.setLayout(jCenterPanelLayout);
-        jCenterPanelLayout.setHorizontalGroup(
-            jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jwelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPswLabel)
-                    .addComponent(jUsrNmLabel))
-                .addGap(89, 89, 89)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jUsrNmField)
-                    .addComponent(jPswField))
-                .addGap(50, 50, 50))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCenterPanelLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jConnectButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(154, 154, 154))
-        );
-        jCenterPanelLayout.setVerticalGroup(
-            jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jCenterPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jwelcome)
-                .addGap(68, 68, 68)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jUsrNmLabel)
-                    .addComponent(jUsrNmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jCenterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPswLabel)
-                    .addComponent(jPswField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jConnectButton)
-                .addGap(18, 18, 18)
-                .addComponent(jBackButton)
-                .addGap(60, 60, 60))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(44, 79, 44, 79);
+        jCenterPanel.add(jButtonPanel, gridBagConstraints);
 
         jDesktopPane.setLayer(jCenterPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -141,15 +139,15 @@ public class Database extends javax.swing.JFrame {
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPaneLayout.createSequentialGroup()
                 .addGap(247, 247, 247)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPaneLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
+                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,9 +184,11 @@ public class Database extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBackButton;
+    private javax.swing.JPanel jButtonPanel;
     private javax.swing.JPanel jCenterPanel;
     private javax.swing.JButton jConnectButton;
     private javax.swing.JDesktopPane jDesktopPane;
+    private javax.swing.JPanel jInputPanel;
     private javax.swing.JPasswordField jPswField;
     private javax.swing.JLabel jPswLabel;
     private javax.swing.JTextField jUsrNmField;

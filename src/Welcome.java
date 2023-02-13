@@ -58,13 +58,14 @@ public class Welcome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Planer");
-        setBackground(new java.awt.Color(153, 0, 102));
+        setBackground(new java.awt.Color(153, 0, 101));
         setMaximumSize(new java.awt.Dimension(880, 515));
         setMinimumSize(new java.awt.Dimension(880, 515));
         setPreferredSize(new java.awt.Dimension(880, 515));
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jSidePanel.setBackground(new java.awt.Color(153, 0, 102));
+        jSidePanel.setBackground(new java.awt.Color(153, 0, 101));
 
         javax.swing.GroupLayout jSidePanelLayout = new javax.swing.GroupLayout(jSidePanel);
         jSidePanel.setLayout(jSidePanelLayout);
@@ -99,6 +100,7 @@ public class Welcome extends javax.swing.JFrame {
 
         jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jDBButton.setText("Connect");
+        jDBButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
         jDBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDBButtonActionPerformed(evt);
@@ -108,6 +110,7 @@ public class Welcome extends javax.swing.JFrame {
 
         jSignupButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSignupButton.setText("Signup");
+        jSignupButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
         jSignupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSignupButtonActionPerformed(evt);
@@ -117,6 +120,7 @@ public class Welcome extends javax.swing.JFrame {
 
         jSigninButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSigninButton.setText("Signin");
+        jSigninButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
