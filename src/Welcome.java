@@ -32,8 +32,7 @@ public class Welcome extends javax.swing.JFrame {
 
     public Welcome() {
         initComponents();
-        // To change the title bar color         
-        UIManager.put("Window", new javax.swing.plaf.ColorUIResource(Color.YELLOW));
+        // To change the title bar color
         setDefaultLookAndFeelDecorated(true);
         //
         
@@ -59,9 +58,7 @@ public class Welcome extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Planer");
         setBackground(new java.awt.Color(153, 0, 101));
-        setMaximumSize(new java.awt.Dimension(880, 515));
         setMinimumSize(new java.awt.Dimension(880, 515));
-        setPreferredSize(new java.awt.Dimension(880, 515));
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
@@ -84,16 +81,16 @@ public class Welcome extends javax.swing.JFrame {
         jCenterPanel.setMinimumSize(new java.awt.Dimension(378, 400));
         jCenterPanel.setLayout(new java.awt.GridBagLayout());
 
-        jwelcome.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Butler Stencil", 1, 80)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("Welcome");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jwelcome.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 25);
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 50;
+        gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 25);
         jCenterPanel.add(jwelcome, gridBagConstraints);
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
@@ -132,7 +129,7 @@ public class Welcome extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(86, 0, 86, 0);
+        gridBagConstraints.insets = new java.awt.Insets(80, 80, 80, 80);
         jCenterPanel.add(jPanel2, gridBagConstraints);
 
         getContentPane().add(jCenterPanel);
@@ -141,9 +138,12 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jDBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDBButtonActionPerformed
-        Database page = new Database();
-        page.setVisible(true);
-        setVisible(false);
+        // Database page = new Database();
+        // page.setVisible(true);
+        // setVisible(false);
+        getContentPane().remove(jCenterPanel);
+        getContentPane().add(new Datatab());
+        validate();
     }//GEN-LAST:event_jDBButtonActionPerformed
 
     private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed

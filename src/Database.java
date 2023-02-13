@@ -39,8 +39,8 @@ public class Database extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jDesktopPane = new javax.swing.JDesktopPane();
-        jCenterPanel = new javax.swing.JPanel();
+        jDesktopPanel = new javax.swing.JDesktopPane();
+        jDatabasePanel = new javax.swing.JPanel();
         jwelcome = new javax.swing.JLabel();
         jInputPanel = new javax.swing.JPanel();
         jUsrNmLabel = new javax.swing.JLabel();
@@ -53,15 +53,15 @@ public class Database extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane.setBackground(new java.awt.Color(153, 0, 102));
-        jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setMaximumSize(new java.awt.Dimension(880, 515));
-        jDesktopPane.setMinimumSize(new java.awt.Dimension(880, 515));
+        jDesktopPanel.setBackground(new java.awt.Color(153, 0, 102));
+        jDesktopPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jDesktopPanel.setMaximumSize(new java.awt.Dimension(880, 515));
+        jDesktopPanel.setMinimumSize(new java.awt.Dimension(880, 515));
 
-        jCenterPanel.setForeground(new java.awt.Color(60, 63, 65));
-        jCenterPanel.setLayout(new java.awt.GridBagLayout());
+        jDatabasePanel.setForeground(new java.awt.Color(60, 63, 65));
+        jDatabasePanel.setLayout(new java.awt.GridBagLayout());
 
-        jwelcome.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jwelcome.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jwelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jwelcome.setText("MySQL");
         jwelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -69,22 +69,22 @@ public class Database extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(48, 102, 48, 102);
-        jCenterPanel.add(jwelcome, gridBagConstraints);
+        jDatabasePanel.add(jwelcome, gridBagConstraints);
 
         jInputPanel.setLayout(new java.awt.GridLayout(2, 2, 20, 20));
 
-        jUsrNmLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jUsrNmLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jUsrNmLabel.setText("Username");
         jInputPanel.add(jUsrNmLabel);
 
         jUsrNmField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jInputPanel.add(jUsrNmField);
 
-        jPswLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jPswLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jPswLabel.setText("Password");
         jInputPanel.add(jPswLabel);
 
@@ -94,17 +94,21 @@ public class Database extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 20;
+        gridBagConstraints.ipadx = 50;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(50, 50, 50, 50);
-        jCenterPanel.add(jInputPanel, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(58, 90, 58, 90);
+        jDatabasePanel.add(jInputPanel, gridBagConstraints);
 
-        jButtonPanel.setLayout(new java.awt.GridLayout(2, 0, 0, 20));
+        jButtonPanel.setMaximumSize(new java.awt.Dimension(0, 0));
+        jButtonPanel.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
 
         jConnectButton.setText("Connect");
         jConnectButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jConnectButton.setMaximumSize(new java.awt.Dimension(50, 18));
+        jConnectButton.setMinimumSize(new java.awt.Dimension(50, 18));
         jConnectButton.setName(""); // NOI18N
+        jConnectButton.setPreferredSize(new java.awt.Dimension(50, 18));
+        jConnectButton.setSize(new java.awt.Dimension(50, 18));
         jConnectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jConnectButtonActionPerformed(evt);
@@ -115,6 +119,10 @@ public class Database extends javax.swing.JFrame {
         jBackButton.setText("Back");
         jBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBackButton.setMaximumSize(new java.awt.Dimension(50, 18));
+        jBackButton.setMinimumSize(new java.awt.Dimension(50, 18));
+        jBackButton.setPreferredSize(new java.awt.Dimension(50, 18));
+        jBackButton.setSize(new java.awt.Dimension(50, 18));
         jBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBackButtonActionPerformed(evt);
@@ -125,40 +133,40 @@ public class Database extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(44, 79, 44, 79);
-        jCenterPanel.add(jButtonPanel, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(94, 78, 76, 77);
+        jDatabasePanel.add(jButtonPanel, gridBagConstraints);
 
-        jDesktopPane.setLayer(jCenterPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPanel.setLayer(jDatabasePanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
-        jDesktopPane.setLayout(jDesktopPaneLayout);
-        jDesktopPaneLayout.setHorizontalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPaneLayout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(220, Short.MAX_VALUE))
+        javax.swing.GroupLayout jDesktopPanelLayout = new javax.swing.GroupLayout(jDesktopPanel);
+        jDesktopPanel.setLayout(jDesktopPanelLayout);
+        jDesktopPanelLayout.setHorizontalGroup(
+            jDesktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPanelLayout.createSequentialGroup()
+                .addGap(318, 318, 318)
+                .addComponent(jDatabasePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
-        jDesktopPaneLayout.setVerticalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPaneLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+        jDesktopPanelLayout.setVerticalGroup(
+            jDesktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPanelLayout.createSequentialGroup()
+                .addComponent(jDatabasePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktopPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -185,9 +193,9 @@ public class Database extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBackButton;
     private javax.swing.JPanel jButtonPanel;
-    private javax.swing.JPanel jCenterPanel;
     private javax.swing.JButton jConnectButton;
-    private javax.swing.JDesktopPane jDesktopPane;
+    public javax.swing.JPanel jDatabasePanel;
+    private javax.swing.JDesktopPane jDesktopPanel;
     private javax.swing.JPanel jInputPanel;
     private javax.swing.JPasswordField jPswField;
     private javax.swing.JLabel jPswLabel;
