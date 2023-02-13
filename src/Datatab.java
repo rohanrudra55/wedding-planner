@@ -27,7 +27,12 @@
  * @author alpha
  */
 import java.awt.*;
+import java.lang.constant.Constable;
+
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.event.MouseInputListener;
 
 public class Datatab extends JPanel {
 
@@ -47,7 +52,9 @@ public class Datatab extends JPanel {
     private void formatButton(String name, JButton button) {
         button.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         button.setText(name);
-        button.setSize(new Dimension(50, 18));
+        // button.setSize(new Dimension(40, 10));
+        // button.setBounds(new Rectangle(40, 18));
+        // button.setMargin(new Insets(2, 14, 2, 14));
         button.setBorder(
                 new javax.swing.border.LineBorder(
                         new java.awt.Color(153, 0, 101),
@@ -58,25 +65,51 @@ public class Datatab extends JPanel {
     public Datatab() {
         setMaximumSize(new Dimension(378, 400));
         setSize(new Dimension(378, 400));
-        setBackground(new Color(153, 0, 102));
+        // setBackground(new Color(200, 200, 200));
         setLayout(new GridBagLayout());
         GridBagConstraints constrains;
 
+        // Title
+        jTitle.setText("MySQL");
+        jTitle.setFont(new Font("Butler Stencil", 0, 50));
+
+        constrains = new GridBagConstraints();
+        constrains.gridx = 0;
+        constrains.gridy = 0;
+        // constrains.fill = GridBagConstr aints.HORIZONTAL;
+        constrains.insets = new Insets(50, 50, 50, 50);
+        add(jTitle, constrains);
+
         // Field
         jDataPanel.setLayout(new GridLayout(2, 2, 20, 20));
+        jDataPanel.setOpaque(false);
         jUserLable.setText("username");
+        jUserLable.setFont(new Font("Arial", 1, 20));
         jDataPanel.add(jUserLable);
+        jUserField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
+        jUserField.setBackground(getBackground());
         jDataPanel.add(jUserField);
         jPassLabel.setText("password");
+        jPassLabel.setFont(new Font("Arial", 1, 20));
         jDataPanel.add(jPassLabel);
+        JPasField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
+        JPasField.setBackground(getBackground());
         jDataPanel.add(JPasField);
 
         constrains = new GridBagConstraints();
+        constrains.gridx = 0;
+        constrains.gridy = 1;
+        constrains.weightx = 0.25;
+        constrains.weighty = 0;
+        constrains.ipadx = 20;
+        constrains.ipady = 2;
+        constrains.insets = new Insets(50, 25, 50, 25);
         add(jDataPanel, constrains);
 
         // Buttons
 
         jButtonPanel.setLayout(new GridLayout(1, 0, 20, 0));
+        jButtonPanel.setOpaque(false);
         formatButton("Back", jBackButton);
         jBackButton.addActionListener(
                 new java.awt.event.ActionListener() {
@@ -84,6 +117,17 @@ public class Datatab extends JPanel {
                         jBackButtonActionPerformed(evt);
                     }
                 });
+        jBackButton.addMouseListener(
+                new java.awt.event.MouseAdapter() {
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        jBackButtonMouseEntered(evt);
+                    }
+
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        jBackButtonMouseExited(evt);
+                    }
+                });
+
         jButtonPanel.add(jBackButton);
         formatButton("Connect", jConneButton);
         jConneButton.addActionListener(
@@ -94,6 +138,13 @@ public class Datatab extends JPanel {
                 });
         jButtonPanel.add(jConneButton);
         constrains = new GridBagConstraints();
+        constrains.gridx = 0;
+        constrains.gridy = 2;
+        constrains.ipadx = 50;
+        constrains.ipady = 2;
+        constrains.weightx = 0;
+        constrains.weighty = 0;
+        constrains.insets = new Insets(50, 50, 50, 50);
         add(jButtonPanel, constrains);
     }
 
@@ -101,6 +152,16 @@ public class Datatab extends JPanel {
     }
 
     private void jConneButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+
+    private void jBackButtonMouseEntered(java.awt.event.MouseEvent evt) {
+        jBackButton.setBackground(new Color(153, 0, 101));
+
+    }
+
+    private void jBackButtonMouseExited(java.awt.event.MouseEvent evt) {
+        jBackButton.setBackground(getBackground());
+
     }
 
 }

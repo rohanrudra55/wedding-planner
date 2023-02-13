@@ -90,6 +90,7 @@ public class Welcome extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 50;
+        gridBagConstraints.weighty = 0.5;
         gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 25);
         jCenterPanel.add(jwelcome, gridBagConstraints);
 
@@ -98,6 +99,16 @@ public class Welcome extends javax.swing.JFrame {
         jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jDBButton.setText("Connect");
         jDBButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
+        jDBButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jDBButtonFocusGained(evt);
+            }
+        });
+        jDBButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jDBButtonMouseEntered(evt);
+            }
+        });
         jDBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDBButtonActionPerformed(evt);
@@ -118,6 +129,7 @@ public class Welcome extends javax.swing.JFrame {
         jSigninButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jSigninButton.setText("Signin");
         jSigninButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
+        jSigninButton.setPreferredSize(null);
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
@@ -157,6 +169,14 @@ public class Welcome extends javax.swing.JFrame {
         active.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jSigninButtonActionPerformed
+
+    private void jDBButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jDBButtonFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jDBButtonFocusGained
+
+    private void jDBButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDBButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jDBButtonMouseEntered
 
     public static void main(String args[]) {
 
