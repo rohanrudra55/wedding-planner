@@ -155,9 +155,12 @@ public class Welcome extends javax.swing.JFrame {
     }//GEN-LAST:event_jDBButtonActionPerformed
 
     private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed
-        Signup active = new Signup();
-        active.setVisible(true);
-        setVisible(false);
+        getContentPane().remove(jCenterPanel);
+        getContentPane().add(new Signup_1());
+        validate();
+//        Signup_1 active = new Signup_1();
+//        active.setVisible(true);
+//        setVisible(false);
     }//GEN-LAST:event_jSignupButtonActionPerformed
 
     private void jSigninButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSigninButtonActionPerformed
