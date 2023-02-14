@@ -99,11 +99,7 @@ public class Welcome extends javax.swing.JFrame {
         jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jDBButton.setText("Connect");
         jDBButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
-        jDBButton.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jDBButtonFocusGained(evt);
-            }
-        });
+
         jDBButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jDBButtonMouseEntered(evt);
@@ -170,12 +166,10 @@ public class Welcome extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jSigninButtonActionPerformed
 
-    private void jDBButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jDBButtonFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jDBButtonFocusGained
 
     private void jDBButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDBButtonMouseEntered
         // TODO add your handling code here:
+        jDBButton.setBackground(new Color(0, 0, 0));
     }//GEN-LAST:event_jDBButtonMouseEntered
 
     public static void main(String args[]) {

@@ -49,9 +49,11 @@ public class Datatab extends JPanel {
     private JButton jBackButton = new JButton();
     private JButton jConneButton = new JButton();
 
+
     private void formatButton(String name, JButton button) {
         button.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         button.setText(name);
+        button.setOpaque(true);
         // button.setSize(new Dimension(40, 10));
         // button.setBounds(new Rectangle(40, 18));
         // button.setMargin(new Insets(2, 14, 2, 14));
@@ -62,10 +64,22 @@ public class Datatab extends JPanel {
                         true));
     }
 
+    private void hoverAction(JButton button) {
+        button.addMouseListener(
+                new java.awt.event.MouseAdapter() {
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(224, 153, 206));
+                    }
+
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        button.setBackground(getBackground());
+                    }
+                });
+    }
+
     public Datatab() {
         setMaximumSize(new Dimension(378, 400));
         setSize(new Dimension(378, 400));
-        // setBackground(new Color(200, 200, 200));
         setLayout(new GridBagLayout());
         GridBagConstraints constrains;
 
@@ -111,31 +125,25 @@ public class Datatab extends JPanel {
         jButtonPanel.setLayout(new GridLayout(1, 0, 20, 0));
         jButtonPanel.setOpaque(false);
         formatButton("Back", jBackButton);
+        hoverAction(jBackButton);
         jBackButton.addActionListener(
                 new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jBackButtonActionPerformed(evt);
                     }
                 });
-        jBackButton.addMouseListener(
-                new java.awt.event.MouseAdapter() {
-                    public void mouseEntered(java.awt.event.MouseEvent evt) {
-                        jBackButtonMouseEntered(evt);
-                    }
 
-                    // public void mouseExited(java.awt.event.MouseEvent evt) {
-                    // jBackButtonMouseExited(evt);
-                    // }
-                });
 
         jButtonPanel.add(jBackButton);
         formatButton("Connect", jConneButton);
+        hoverAction(jConneButton);
         jConneButton.addActionListener(
                 new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jConneButtonActionPerformed(evt);
                     }
                 });
+
         jButtonPanel.add(jConneButton);
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
@@ -149,19 +157,9 @@ public class Datatab extends JPanel {
     }
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {
+
     }
 
     private void jConneButtonActionPerformed(java.awt.event.ActionEvent evt) {
     }
-
-    private void jBackButtonMouseEntered(java.awt.event.MouseEvent evt) {
-        jBackButton.setBackground(new Color(153, 0, 101));
-
-    }
-
-    private void jBackButtonMouseExited(java.awt.event.MouseEvent evt) {
-        // jBackButton.setBackground(getBackground());
-
-    }
-
 }
