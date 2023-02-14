@@ -123,9 +123,9 @@ public class Datatab extends JPanel {
                         jBackButtonMouseEntered(evt);
                     }
 
-                    public void mouseExited(java.awt.event.MouseEvent evt) {
-                        jBackButtonMouseExited(evt);
-                    }
+                    // public void mouseExited(java.awt.event.MouseEvent evt) {
+                    // jBackButtonMouseExited(evt);
+                    // }
                 });
 
         jButtonPanel.add(jBackButton);
@@ -160,7 +160,7 @@ public class Datatab extends JPanel {
     }
 
     private void jBackButtonMouseExited(java.awt.event.MouseEvent evt) {
-        jBackButton.setBackground(getBackground());
+        // jBackButton.setBackground(getBackground());
 
     }
 
