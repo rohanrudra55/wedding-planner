@@ -14,6 +14,14 @@ import javax.swing.border.MatteBorder;
 import java.awt.Toolkit;
 import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
+
+import java.awt.*;
+import java.lang.constant.Constable;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.event.MouseInputListener;
 /*
  * The MIT License
  *
@@ -80,6 +88,7 @@ public class Signup_1 extends JPanel{
                         new java.awt.Color(153, 0, 101),
                         1,
                         true));
+        
     }
     
     private void hoverAction(JButton button) {
@@ -104,8 +113,8 @@ public class Signup_1 extends JPanel{
         GridBagConstraints constrains;
 
         // Title
-        jwelcome.setText("Hello User!");
-        jwelcome.setFont(new Font("Butler Stencil", 0, 50));
+//        jwelcome.setText("Hello User!");
+//        jwelcome.setFont(new Font("Butler Stencil", 0, 50));
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
@@ -115,28 +124,30 @@ public class Signup_1 extends JPanel{
         add(jwelcome, constrains);
 
         // Field
-        jCenterPanel.setLayout(new GridLayout(2, 2, 20, 20));
+        jCenterPanel.setLayout(new GridLayout(6, 2, 12, 10));
         jCenterPanel.setOpaque(false);
         jUsrTypLable.setText("UserType");
-//        jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
+        jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
         jUsrTypLable.setFont(new Font("Arial", 1, 20));
         jCenterPanel.add(jUsrTypLable);
+        jCenterPanel.add(jComboTyp);
 //        jUserField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
 //        jUserField.setBackground(getBackground());
 //        jDataPanel.add(jUserField);
+
         jNmLable.setText("Name");
         jNmLable.setFont(new Font("Arial", 1, 20));
         jCenterPanel.add(jNmLable);
         jNamField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
         jNamField.setBackground(getBackground());
-        jDataPanel.add(jNamField);
+        jCenterPanel.add(jNamField);
 
         jMbLabel.setText("Mobile");
         jMbLabel.setFont(new Font("Arial", 1, 20));
         jCenterPanel.add(jMbLabel);
         jMbFeild.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
         jMbFeild.setBackground(getBackground());
-        jDataPanel.add(jMbFeild);
+        jCenterPanel.add(jMbFeild);
         
         
         jUsrNmLabel.setText("UserName");
@@ -144,7 +155,7 @@ public class Signup_1 extends JPanel{
         jCenterPanel.add(jUsrNmLabel);
         jUsrNmField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
         jUsrNmField.setBackground(getBackground());
-        jDataPanel.add(jUsrNmField);
+        jCenterPanel.add(jUsrNmField);
         
         
         jPswLabel.setText("Password");
@@ -152,7 +163,7 @@ public class Signup_1 extends JPanel{
         jCenterPanel.add(jPswLabel);
         jPswField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
         jPswField.setBackground(getBackground());
-        jDataPanel.add(jPswField);
+        jCenterPanel.add(jPswField);
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
