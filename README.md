@@ -12,6 +12,10 @@ type the following:
 java -jar "dist/wedding_planner.jar"
 ``` 
 
+```
+ant -f /Users/alpha/Documents/Github/wedding-planner -Dnb.internal.action.name=run run
+```
+
 To distribute this project, zip up the dist folder (including the lib folder)
 and distribute the ZIP file.
 

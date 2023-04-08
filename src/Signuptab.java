@@ -50,10 +50,8 @@ import javax.swing.event.MouseInputListener;
  *
  * @author ADITI MANDAL
  */
-public class Signup_1 extends JPanel{
-    private JDesktopPane jDesktopPane = new JDesktopPane();
-    private JPanel jCenterPanel = new JPanel();
-//    private JPanel jDataPanel = new JPanel();
+public class Signuptab extends JPanel {
+    private JPanel jCenterSignupPanel = new JPanel();
 
     private JLabel jwelcome = new JLabel();
 
@@ -67,15 +65,12 @@ public class Signup_1 extends JPanel{
     private JTextField jMbFeild = new JTextField();
     private JLabel jUsrTypLable = new JLabel();
     private JComboBox jComboTyp = new JComboBox<>();
-    
+
     private JPanel jButtonPanel = new JPanel();
-    private JPanel jDataPanel = new JPanel();
 
     private JButton jBackButton = new JButton();
     private JButton jSignupButton = new JButton();
-    
-    
-    
+
     private void formatButton(String name, JButton button) {
         button.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         button.setText(name);
@@ -88,9 +83,8 @@ public class Signup_1 extends JPanel{
                         new java.awt.Color(153, 0, 101),
                         1,
                         true));
-        
     }
-    
+
     private void hoverAction(JButton button) {
         button.addMouseListener(
                 new java.awt.event.MouseAdapter() {
@@ -103,18 +97,26 @@ public class Signup_1 extends JPanel{
                     }
                 });
     }
-    
-    
-    
-    public Signup_1() {
+
+    private void formatLabel(JLabel lable, String text) {
+        lable.setText(text);
+        lable.setFont(new Font("Arial", 0, 15));
+    }
+
+    private void formatFeild(JTextField field) {
+        field.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
+        field.setBackground(getBackground());
+    }
+
+    public Signuptab() {
         setMaximumSize(new Dimension(378, 400));
         setSize(new Dimension(378, 400));
         setLayout(new GridBagLayout());
         GridBagConstraints constrains;
 
-        // Title
-//        jwelcome.setText("Hello User!");
-//        jwelcome.setFont(new Font("Butler Stencil", 0, 50));
+        // // Title
+        // jwelcome.setText("Hello User!");
+        // jwelcome.setFont(new Font("Butler Stencil", 0, 50));
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
@@ -124,46 +126,33 @@ public class Signup_1 extends JPanel{
         add(jwelcome, constrains);
 
         // Field
-        jCenterPanel.setLayout(new GridLayout(6, 2, 12, 10));
-        jCenterPanel.setOpaque(false);
+        jCenterSignupPanel.setLayout(new GridLayout(6, 2, 12, 10));
+        jCenterSignupPanel.setOpaque(false);
         jUsrTypLable.setText("UserType");
         jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
         jUsrTypLable.setFont(new Font("Arial", 1, 20));
-        jCenterPanel.add(jUsrTypLable);
-        jCenterPanel.add(jComboTyp);
-//        jUserField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-//        jUserField.setBackground(getBackground());
-//        jDataPanel.add(jUserField);
+        jCenterSignupPanel.add(jUsrTypLable);
+        jCenterSignupPanel.add(jComboTyp);
 
-        jNmLable.setText("Name");
-        jNmLable.setFont(new Font("Arial", 1, 20));
-        jCenterPanel.add(jNmLable);
-        jNamField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        jNamField.setBackground(getBackground());
-        jCenterPanel.add(jNamField);
+        formatLabel(jNmLable, "Name");
+        formatFeild(jNamField);
+        jCenterSignupPanel.add(jNmLable);
+        jCenterSignupPanel.add(jNamField);
 
-        jMbLabel.setText("Mobile");
-        jMbLabel.setFont(new Font("Arial", 1, 20));
-        jCenterPanel.add(jMbLabel);
-        jMbFeild.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        jMbFeild.setBackground(getBackground());
-        jCenterPanel.add(jMbFeild);
-        
-        
-        jUsrNmLabel.setText("UserName");
-        jUsrNmLabel.setFont(new Font("Arial", 1, 20));
-        jCenterPanel.add(jUsrNmLabel);
-        jUsrNmField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        jUsrNmField.setBackground(getBackground());
-        jCenterPanel.add(jUsrNmField);
-        
-        
-        jPswLabel.setText("Password");
-        jPswLabel.setFont(new Font("Arial", 1, 20));
-        jCenterPanel.add(jPswLabel);
-        jPswField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        jPswField.setBackground(getBackground());
-        jCenterPanel.add(jPswField);
+        formatLabel(jMbLabel, "Mobile");
+        formatFeild(jMbFeild);
+        jCenterSignupPanel.add(jMbLabel);
+        jCenterSignupPanel.add(jMbFeild);
+
+        formatLabel(jUsrNmLabel, "Username");
+        formatFeild(jUsrNmField);
+        jCenterSignupPanel.add(jUsrNmLabel);
+        jCenterSignupPanel.add(jUsrNmField);
+
+        formatLabel(jPswLabel, "Password");
+        formatFeild(jPswField);
+        jCenterSignupPanel.add(jPswLabel);
+        jCenterSignupPanel.add(jPswField);
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
@@ -173,7 +162,7 @@ public class Signup_1 extends JPanel{
         constrains.ipadx = 20;
         constrains.ipady = 2;
         constrains.insets = new Insets(50, 25, 50, 25);
-        add(jCenterPanel, constrains);
+        add(jCenterSignupPanel, constrains);
 
         // Buttons
 
@@ -186,7 +175,6 @@ public class Signup_1 extends JPanel{
                 jBackButtonActionPerformed(evt);
             }
         });
-
 
         jButtonPanel.add(jBackButton);
         formatButton("Signup", jSignupButton);
@@ -209,15 +197,16 @@ public class Signup_1 extends JPanel{
         constrains.insets = new Insets(50, 50, 50, 50);
         add(jButtonPanel, constrains);
     }
-    
-    
-    private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+
+    private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
+
         Welcome active = new Welcome();
         active.setVisible(true);
-        setVisible(false);
+        f1.setVisible(false);
     }
-    
-    private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+
+    private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String typeValue = (String) jComboTyp.getSelectedItem();
         Profile loggedUser = new Profile();
         loggedUser.resetChecker();
@@ -227,9 +216,7 @@ public class Signup_1 extends JPanel{
         loggedUser.setUsername(jUsrNmField.getText());
         loggedUser.setMobile(jMbFeild.getText());
         loggedUser.update();
-        Signin page = new Signin();
-        page.setVisible(true);
-        setVisible(false);
-    }   
-    
+        JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
+        f1.setVisible(false);
+    }
 }

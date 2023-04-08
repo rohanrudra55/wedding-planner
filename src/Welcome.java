@@ -42,6 +42,37 @@ public class Welcome extends javax.swing.JFrame {
         jSidePanel.setBackground(new  Color(153,0,102,60));
     }
 
+    protected void CloseWelcome() {
+        setVisible(false);
+    }
+
+    private void formatButton(String name, JButton button) {
+        button.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        button.setText(name);
+        button.setOpaque(true);
+        // button.setSize(new Dimension(40, 10));
+        // button.setBounds(new Rectangle(40, 18));
+        // button.setMargin(new Insets(2, 14, 2, 14));
+        button.setBorder(
+                new javax.swing.border.LineBorder(
+                        new java.awt.Color(153, 0, 101),
+                        1,
+                        true));
+    }
+
+    private void hoverAction(JButton button) {
+        button.addMouseListener(
+                new java.awt.event.MouseAdapter() {
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        button.setBackground(new Color(224, 153, 206));
+                    }
+
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        button.setBackground(jPanel2.getBackground());
+                    }
+                });
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,15 +127,9 @@ public class Welcome extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
 
-        jDBButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jDBButton.setText("Connect");
-        jDBButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
+        formatButton("Connect", jDBButton);
+        hoverAction(jDBButton);
 
-        jDBButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jDBButtonMouseEntered(evt);
-            }
-        });
         jDBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDBButtonActionPerformed(evt);
@@ -112,9 +137,9 @@ public class Welcome extends javax.swing.JFrame {
         });
         jPanel2.add(jDBButton);
 
-        jSignupButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jSignupButton.setText("Signup");
-        jSignupButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
+        formatButton("Signup", jSignupButton);
+        hoverAction(jSignupButton);
+
         jSignupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSignupButtonActionPerformed(evt);
@@ -122,10 +147,9 @@ public class Welcome extends javax.swing.JFrame {
         });
         jPanel2.add(jSignupButton);
 
-        jSigninButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jSigninButton.setText("Signin");
-        jSigninButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 101), 1, true));
-        jSigninButton.setPreferredSize(null);
+        formatButton("Signin", jSigninButton);
+        hoverAction(jSigninButton);
+
         jSigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSigninButtonActionPerformed(evt);
@@ -145,10 +169,7 @@ public class Welcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jDBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDBButtonActionPerformed
-        // Database page = new Database();
-        // page.setVisible(true);
-        // setVisible(false);
+    private void jDBButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jDBButtonActionPerformed
         getContentPane().remove(jCenterPanel);
         getContentPane().add(new Datatab());
         validate();
@@ -156,30 +177,22 @@ public class Welcome extends javax.swing.JFrame {
 
     private void jSignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupButtonActionPerformed
         getContentPane().remove(jCenterPanel);
-        getContentPane().add(new Signup_1());
+        getContentPane().add(new Signuptab());
         validate();
-//        Signup_1 active = new Signup_1();
-//        active.setVisible(true);
-//        setVisible(false);
     }//GEN-LAST:event_jSignupButtonActionPerformed
 
     private void jSigninButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSigninButtonActionPerformed
-        Signin active = new Signin();
-        active.setVisible(true);
-        setVisible(false);
+        getContentPane().remove(jCenterPanel);
+        getContentPane().add(new Signintab());
+        validate();
     }//GEN-LAST:event_jSigninButtonActionPerformed
-
-
-    private void jDBButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDBButtonMouseEntered
-        // TODO add your handling code here:
-        jDBButton.setBackground(new Color(0, 0, 0));
-    }//GEN-LAST:event_jDBButtonMouseEntered
 
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Welcome().setVisible(true);
+                Welcome MainWindow = new Welcome(); 
+                MainWindow.setVisible(true);
             }
         });
     }

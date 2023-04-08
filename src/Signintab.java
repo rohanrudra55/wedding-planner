@@ -1,7 +1,31 @@
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.MatteBorder;
+import java.awt.Toolkit;
+import javax.swing.JComboBox;
+import javax.swing.JDesktopPane;
+
+import java.awt.*;
+import java.lang.constant.Constable;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.event.MouseInputListener;
 /*
  * The MIT License
  *
- * Copyright 2023 alpha.
+ * Copyright 2023 ADITI MANDAL.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,31 +48,24 @@
 
 /**
  *
- * @author alpha
+ * @author ADITI MANDAL
  */
-import java.awt.*;
-import java.lang.constant.Constable;
+public class Signintab extends JPanel {
+    private JPanel jCenterSignupPanel = new JPanel();
 
-import javax.swing.*;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.event.MouseInputListener;
+    private JLabel jwelcome = new JLabel();
 
-public class Datatab extends JPanel {
+    private JLabel jUsrNmLabel = new JLabel();
+    private JTextField jUsrNmField = new JTextField();
+    private JLabel jPswLabel = new JLabel();
+    private JTextField jPswField = new JTextField();
+    private JLabel jUsrTypLable = new JLabel();
+    private JComboBox jComboTyp = new JComboBox<>();
 
     private JPanel jButtonPanel = new JPanel();
-    private JPanel jDataPanel = new JPanel();
-
-    private JLabel jTitle = new JLabel();
-
-    private JLabel jUserLable = new JLabel();
-    private JTextField jUserField = new JTextField();
-    private JLabel jPassLabel = new JLabel();
-    private JTextField JPasField = new JTextField();
 
     private JButton jBackButton = new JButton();
-    private JButton jConneButton = new JButton();
-
+    private JButton jSigninButton = new JButton();
 
     private void formatButton(String name, JButton button) {
         button.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
@@ -77,38 +94,51 @@ public class Datatab extends JPanel {
                 });
     }
 
-    public Datatab() {
+    private void formatLabel(JLabel lable, String text) {
+        lable.setText(text);
+        lable.setFont(new Font("Arial", 0, 15));
+    }
+
+    private void formatFeild(JTextField field) {
+        field.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
+        field.setBackground(getBackground());
+    }
+
+    public Signintab() {
         setMaximumSize(new Dimension(378, 400));
         setSize(new Dimension(378, 400));
         setLayout(new GridBagLayout());
         GridBagConstraints constrains;
 
-        // Title
-        jTitle.setText("MySQL");
-        jTitle.setFont(new Font("Butler Stencil", 0, 50));
+        // // Title
+        // jwelcome.setText("Hello User!");
+        // jwelcome.setFont(new Font("Butler Stencil", 0, 50));
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
         constrains.gridy = 0;
         // constrains.fill = GridBagConstr aints.HORIZONTAL;
         constrains.insets = new Insets(50, 50, 50, 50);
-        add(jTitle, constrains);
+        add(jwelcome, constrains);
 
         // Field
-        jDataPanel.setLayout(new GridLayout(2, 2, 20, 20));
-        jDataPanel.setOpaque(false);
-        jUserLable.setText("username");
-        jUserLable.setFont(new Font("Arial", 1, 20));
-        jDataPanel.add(jUserLable);
-        jUserField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        jUserField.setBackground(getBackground());
-        jDataPanel.add(jUserField);
-        jPassLabel.setText("password");
-        jPassLabel.setFont(new Font("Arial", 1, 20));
-        jDataPanel.add(jPassLabel);
-        JPasField.setBorder(new MatteBorder(0, 0, 1, 0, new Color(153, 0, 101)));
-        JPasField.setBackground(getBackground());
-        jDataPanel.add(JPasField);
+        jCenterSignupPanel.setLayout(new GridLayout(4, 2, 12, 10));
+        jCenterSignupPanel.setOpaque(false);
+        jUsrTypLable.setText("UserType");
+        jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
+        jUsrTypLable.setFont(new Font("Arial", 1, 20));
+        jCenterSignupPanel.add(jUsrTypLable);
+        jCenterSignupPanel.add(jComboTyp);
+
+        formatLabel(jUsrNmLabel, "Username");
+        formatFeild(jUsrNmField);
+        jCenterSignupPanel.add(jUsrNmLabel);
+        jCenterSignupPanel.add(jUsrNmField);
+
+        formatLabel(jPswLabel, "Password");
+        formatFeild(jPswField);
+        jCenterSignupPanel.add(jPswLabel);
+        jCenterSignupPanel.add(jPswField);
 
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
@@ -118,7 +148,7 @@ public class Datatab extends JPanel {
         constrains.ipadx = 20;
         constrains.ipady = 2;
         constrains.insets = new Insets(50, 25, 50, 25);
-        add(jDataPanel, constrains);
+        add(jCenterSignupPanel, constrains);
 
         // Buttons
 
@@ -126,25 +156,23 @@ public class Datatab extends JPanel {
         jButtonPanel.setOpaque(false);
         formatButton("Back", jBackButton);
         hoverAction(jBackButton);
-        jBackButton.addActionListener(
-                new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jBackButtonActionPerformed(evt);
-                    }
-                });
-
+        jBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBackButtonActionPerformed(evt);
+            }
+        });
 
         jButtonPanel.add(jBackButton);
-        formatButton("Connect", jConneButton);
-        hoverAction(jConneButton);
-        jConneButton.addActionListener(
+        formatButton("Signup", jSigninButton);
+        hoverAction(jSigninButton);
+        jSigninButton.addActionListener(
                 new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jConneButtonActionPerformed(evt);
+                        jSigninButtonActionPerformed(evt);
                     }
                 });
 
-        jButtonPanel.add(jConneButton);
+        jButtonPanel.add(jSigninButton);
         constrains = new GridBagConstraints();
         constrains.gridx = 0;
         constrains.gridy = 2;
@@ -162,13 +190,19 @@ public class Datatab extends JPanel {
         setVisible(false);
     }
 
-    private void jConneButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        Connect.setRoot(jUserField.getText());
-        Connect.setPassword(JPasField.getText());
-        Connect create = new Connect();
+    private void jSigninButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        String userValue = jUsrNmField.getText();
+        String pswValue = jPswField.getText();
+        String typeValue = (String) jComboTyp.getSelectedItem();
 
-        Welcome active = new Welcome();
-        active.setVisible(true);
-        setVisible(false);
+        Profile loginAuthenticate = new Profile();
+        if (!(loginAuthenticate.authenticate(userValue, pswValue, typeValue))) {
+            jUsrNmField.setText("");
+            jPswField.setText("");
+        } else {
+            Menu active = new Menu();
+            active.setVisible(true);
+            setVisible(false);
+        }
     }
 }
