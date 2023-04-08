@@ -11,17 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
-import java.awt.Toolkit;
 import javax.swing.JComboBox;
-import javax.swing.JDesktopPane;
-
-import java.awt.*;
-import java.lang.constant.Constable;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.event.MouseInputListener;
 /*
  * The MIT License
  *
@@ -125,7 +117,7 @@ public class Signintab extends JPanel {
         jCenterSignupPanel.setLayout(new GridLayout(4, 2, 12, 10));
         jCenterSignupPanel.setOpaque(false);
         jUsrTypLable.setText("UserType");
-        jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor" }));
+        jComboTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Agent", "Vendor","Demo" }));
         jUsrTypLable.setFont(new Font("Arial", 1, 20));
         jCenterSignupPanel.add(jUsrTypLable);
         jCenterSignupPanel.add(jComboTyp);
@@ -163,7 +155,7 @@ public class Signintab extends JPanel {
         });
 
         jButtonPanel.add(jBackButton);
-        formatButton("Signup", jSigninButton);
+        formatButton("Signin", jSigninButton);
         hoverAction(jSigninButton);
         jSigninButton.addActionListener(
                 new java.awt.event.ActionListener() {

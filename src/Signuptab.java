@@ -11,17 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
-import java.awt.Toolkit;
 import javax.swing.JComboBox;
-import javax.swing.JDesktopPane;
-
-import java.awt.*;
-import java.lang.constant.Constable;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.event.MouseInputListener;
 /*
  * The MIT License
  *

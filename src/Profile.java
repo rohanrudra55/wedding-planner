@@ -34,7 +34,6 @@ public class Profile {
     private static String username;
     private static String name;
     private static String mobile;
-    private static String event;
     private static String password;
     private static String account;
     private static int check;
@@ -52,10 +51,6 @@ public class Profile {
     public void setAccount(String account) {
         this.account = account;
         check++;
-    }
-
-    public void setEvent(String event) {
-        this.event = event;
     }
 
     public void setName(String name) {
@@ -91,12 +86,14 @@ public class Profile {
     }
 
     public void update() {
+        System.out.println("Update");
 
         try {
             if (check < 4) {
                 JOptionPane.showMessageDialog(null, "Empty feild !");
             } else {
-                String query = "insert into signupdetails values('" + name + "','" + mobile + "','" + username + "','" + password + "')";
+                String query = "insert into signupdetails values('" + name + "','" + mobile + "','" + username + "','"
+                        + password + "')";
                 Connect.state.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Registered !");
             }
@@ -134,10 +131,15 @@ public class Profile {
     }
 
     public boolean authenticate(String inputUsername, String inputPassword, String inputAccount) {
-        if (getDetails(inputUsername) && check(inputPassword, password) && check(inputAccount, account)) {
-            return true;
+        if (check(inputAccount, "Demo")) {
+            if (check(inputUsername, username) && check(inputPassword, password)) {
+                return true;
+            }
         } else {
-            return false;
+            if (getDetails(inputUsername) && check(inputPassword, password) && check(inputAccount, account)) {
+                return true;
+            }
         }
+        return false;
     }
 }

@@ -27,12 +27,9 @@
  * @author alpha
  */
 import java.awt.*;
-import java.lang.constant.Constable;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-import javax.swing.event.MouseInputListener;
 
 public class Datatab extends JPanel {
 
