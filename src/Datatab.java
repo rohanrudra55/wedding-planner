@@ -157,9 +157,10 @@ public class Datatab extends JPanel {
     }
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
         Welcome active = new Welcome();
         active.setVisible(true);
-        setVisible(false);
+        f1.setVisible(false);
     }
 
     private void jConneButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +169,8 @@ public class Datatab extends JPanel {
         Connect create = new Connect();
 
         Welcome active = new Welcome();
+        JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
         active.setVisible(true);
-        setVisible(false);
+        f1.setVisible(false);
     }
 }

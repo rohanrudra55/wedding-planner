@@ -185,9 +185,10 @@ public class Signintab extends JPanel {
     }
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
         Welcome active = new Welcome();
         active.setVisible(true);
-        setVisible(false);
+        f1.setVisible(false);
     }
 
     private void jSigninButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,9 +201,10 @@ public class Signintab extends JPanel {
             jUsrNmField.setText("");
             jPswField.setText("");
         } else {
+            JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
             Menu active = new Menu();
             active.setVisible(true);
-            setVisible(false);
+            f1.setVisible(false);
         }
     }
 }
