@@ -25,6 +25,7 @@ public class Menu extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         extra = new javax.swing.JPanel();
@@ -55,7 +56,6 @@ public class Menu extends javax.swing.JFrame {
         udaipur = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-       
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -71,17 +71,20 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("menu bar buttons");
+        setBackground(new java.awt.Color(153, 0, 102));
+        setLocation(new java.awt.Point(880, 515));
+        setMaximumSize(new java.awt.Dimension(880, 515));
+        setPreferredSize(new java.awt.Dimension(880, 515));
+        setSize(new java.awt.Dimension(880, 515));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1750, 1030));
-        jPanel1.setMinimumSize(new java.awt.Dimension(175, 103));
-        jPanel1.setPreferredSize(new java.awt.Dimension(880, 515));
-        jPanel1.setLayout(null);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         extra.setBackground(new java.awt.Color(153, 0, 102));
         extra.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,7 +182,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         extraLayout.setVerticalGroup(
             extraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,8 +204,15 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(extra);
-        extra.setBounds(410, 30, 130, 10);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 29;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 24;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 11;
+        gridBagConstraints.ipady = -218;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel1.add(extra, gridBagConstraints);
 
         food.setBackground(new java.awt.Color(153, 0, 102));
         food.setForeground(new java.awt.Color(255, 255, 255));
@@ -256,8 +266,15 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(food);
-        food.setBounds(350, 30, 90, 0);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 23;
+        gridBagConstraints.ipadx = -1;
+        gridBagConstraints.ipady = -96;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 80, 0, 0);
+        jPanel1.add(food, gridBagConstraints);
 
         event.setBackground(new java.awt.Color(153, 0, 102));
         event.setForeground(new java.awt.Color(255, 255, 255));
@@ -343,7 +360,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         eventLayout.setVerticalGroup(
             eventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,8 +380,15 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(event);
-        event.setBounds(250, 30, 150, 0);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.ipady = -231;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 70, 0, 0);
+        jPanel1.add(event, gridBagConstraints);
 
         venuetype.setBackground(new java.awt.Color(153, 0, 102));
         venuetype.setForeground(new java.awt.Color(255, 255, 255));
@@ -444,11 +468,17 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(venuetype);
-        venuetype.setBounds(130, 30, 130, 0);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = -4;
+        gridBagConstraints.ipady = -185;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 130, 0, 0);
+        jPanel1.add(venuetype, gridBagConstraints);
 
-        venue.setBackground(new java.awt.Color(153, 0, 102));
-        venue.setOpaque(false);
+        venue.setBackground(new java.awt.Color(255, 204, 204));
         venue.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 venueMouseClicked(evt);
@@ -460,10 +490,13 @@ public class Menu extends javax.swing.JFrame {
                 venueMouseExited(evt);
             }
         });
+        venue.setLayout(new java.awt.GridLayout(4, 0, 5, 5));
 
         jaipur.setBackground(new java.awt.Color(153, 0, 102));
         jaipur.setForeground(new java.awt.Color(255, 255, 255));
         jaipur.setText("Jaipur");
+        jaipur.setBorder(null);
+        jaipur.setBorderPainted(false);
         jaipur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jaipur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -475,10 +508,13 @@ public class Menu extends javax.swing.JFrame {
                 jaipurActionPerformed(evt);
             }
         });
+        venue.add(jaipur);
 
         udaipur.setBackground(new java.awt.Color(153, 0, 102));
         udaipur.setForeground(new java.awt.Color(255, 255, 255));
         udaipur.setText("Udaipur");
+        udaipur.setBorder(null);
+        udaipur.setBorderPainted(false);
         udaipur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         udaipur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -490,10 +526,13 @@ public class Menu extends javax.swing.JFrame {
                 udaipurActionPerformed(evt);
             }
         });
+        venue.add(udaipur);
 
         jButton5.setBackground(new java.awt.Color(153, 0, 102));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Goa");
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -505,49 +544,30 @@ public class Menu extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        venue.add(jButton5);
 
         jButton6.setBackground(new java.awt.Color(153, 0, 102));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Kerala");
+        jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton6MouseEntered(evt);
             }
         });
+        venue.add(jButton6);
 
-
-
-        javax.swing.GroupLayout venueLayout = new javax.swing.GroupLayout(venue);
-        venue.setLayout(venueLayout);
-        venueLayout.setHorizontalGroup(
-            venueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(venueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(udaipur, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                    .addComponent(jaipur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        venueLayout.setVerticalGroup(
-            venueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jaipur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(udaipur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(venue);
-        venue.setBounds(50, 30, 100, 0);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 54;
+        gridBagConstraints.ipady = 87;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 40, 0, 0);
+        jPanel1.add(venue, gridBagConstraints);
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 102));
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -555,6 +575,7 @@ public class Menu extends javax.swing.JFrame {
                 jPanel2MouseExited(evt);
             }
         });
+        jPanel2.setLayout(new java.awt.GridLayout());
 
         jButton2.setBackground(new java.awt.Color(153, 0, 102));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -577,6 +598,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton2);
 
         jButton8.setBackground(new java.awt.Color(153, 0, 102));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
@@ -596,6 +618,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton8);
 
         jButton9.setBackground(new java.awt.Color(153, 0, 102));
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
@@ -615,6 +638,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton9);
 
         jButton10.setBackground(new java.awt.Color(153, 0, 102));
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
@@ -629,6 +653,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton10MouseExited(evt);
             }
         });
+        jPanel2.add(jButton10);
 
         jButton11.setBackground(new java.awt.Color(153, 0, 102));
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
@@ -643,56 +668,55 @@ public class Menu extends javax.swing.JFrame {
                 jButton11MouseExited(evt);
             }
         });
+        jPanel2.add(jButton11);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jButton2)
-                .addGap(38, 38, 38)
-                .addComponent(jButton8)
-                .addGap(27, 27, 27)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton11)
-                .addGap(102, 102, 102))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 600, 50);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 54;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 460;
+        gridBagConstraints.ipady = 33;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel1.add(jPanel2, gridBagConstraints);
 
         jButton31.setBackground(new java.awt.Color(153, 0, 102));
         jButton31.setForeground(new java.awt.Color(255, 255, 255));
         jButton31.setText("Get Pricing");
         jButton31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jButton31);
-        jButton31.setBounds(420, 330, 140, 40);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 18;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 35;
+        gridBagConstraints.ipadx = 46;
+        gridBagConstraints.ipady = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(210, 0, 20, 0);
+        jPanel1.add(jButton31, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Enter number of guests-");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 130, 220, 30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 51;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(80, 50, 0, 0);
+        jPanel1.add(jLabel1, gridBagConstraints);
 
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jTextField2.setText("guests...");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(270, 130, 140, 30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.ipadx = 76;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(80, 0, 0, 0);
+        jPanel1.add(jTextField2, gridBagConstraints);
 
         jButton1.setBackground(new java.awt.Color(153, 0, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -703,13 +727,28 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 330, 110, 40);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.ipadx = 38;
+        gridBagConstraints.ipady = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(210, 70, 20, 0);
+        jPanel1.add(jButton1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Enter Total Budget-");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 210, 130, 30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = -5;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(50, 50, 0, 0);
+        jPanel1.add(jLabel2, gridBagConstraints);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<4Lakhs", "4-10Lakhs", "10-20Lakhs", ">20Lakhs" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -717,23 +756,20 @@ public class Menu extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(270, 210, 140, 40);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.ipadx = 37;
+        gridBagConstraints.ipady = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 0);
+        jPanel1.add(jComboBox1, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 520));
 
-        setSize(new java.awt.Dimension(592, 411));
+        setSize(new java.awt.Dimension(880, 543));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -785,10 +821,6 @@ public class Menu extends javax.swing.JFrame {
     private void jaipurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jaipurActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jaipurActionPerformed
-
-    private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
-        venue.setSize(100,200);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton7MouseEntered
 
     private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
         venue.setSize(100,200);// TODO add your handling code here:
