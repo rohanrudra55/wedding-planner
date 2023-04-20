@@ -55,7 +55,7 @@ public class Menu extends javax.swing.JFrame {
         udaipur = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+       
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -516,18 +516,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(153, 0, 102));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Own city");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/menubar/white-flower-icon-14.jpg"))); // NOI18N
-        jButton7.setPreferredSize(new java.awt.Dimension(46, 16));
-        jButton7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/menubar/white-flower-icon-14.jpg"))); // NOI18N
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton7MouseEntered(evt);
-            }
-        });
+
 
         javax.swing.GroupLayout venueLayout = new javax.swing.GroupLayout(venue);
         venue.setLayout(venueLayout);
@@ -536,7 +525,6 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(venueLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(venueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(udaipur, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
@@ -555,7 +543,6 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1041,7 +1028,6 @@ extra.setSize(0,0);        // TODO add your handling code here:
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
