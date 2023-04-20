@@ -33,6 +33,4 @@ and distribute the ZIP file.
 
 ## Application
 
-<img src="src/icon/windowview.png">
-
-https://youtu.be/lNSwRlMQVXA
+[![Watch the video](src/icon/windowview.png)](https://youtu.be/lNSwRlMQVXA)
