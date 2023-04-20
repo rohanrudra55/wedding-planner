@@ -35,4 +35,4 @@ and distribute the ZIP file.
 
 <img src="src/icon/windowview.png">
 
-<img src="https://youtu.be/lNSwRlMQVXA">
+https://youtu.be/lNSwRlMQVXA
