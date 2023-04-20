@@ -192,7 +192,6 @@ public class Signuptab extends JPanel {
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {
         JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
-
         Welcome active = new Welcome();
         active.setVisible(true);
         f1.setVisible(false);
@@ -209,6 +208,8 @@ public class Signuptab extends JPanel {
         loggedUser.setMobile(jMbFeild.getText());
         loggedUser.update();
         JFrame f1 = (JFrame) SwingUtilities.windowForComponent(this);
+        Welcome active = new Welcome();
+        active.setVisible(true);
         f1.setVisible(false);
     }
 }

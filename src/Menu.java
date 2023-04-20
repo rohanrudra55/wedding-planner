@@ -102,7 +102,7 @@ public class Menu extends javax.swing.JFrame {
         jSidePanel.setLayout(new java.awt.GridBagLayout());
 
         jHeading.setFont(new java.awt.Font("Butler Stencil", 1, 48)); // NOI18N
-        jHeading.setForeground(new java.awt.Color(255, 255, 255));
+        jHeading.setForeground(new java.awt.Color(0, 0, 0));
         jHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jHeading.setText("Menu");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -151,6 +151,7 @@ public class Menu extends javax.swing.JFrame {
         jEvent.setText("Event");
         jEvent.setBorder(null);
         jEvent.setBorderPainted(false);
+        jEvent.setFocusPainted(false);
         jEvent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jItems.add(jEvent);
 
@@ -160,6 +161,7 @@ public class Menu extends javax.swing.JFrame {
         jVenue.setText("Venue");
         jVenue.setBorder(null);
         jVenue.setBorderPainted(false);
+        jVenue.setFocusPainted(false);
         jItems.add(jVenue);
 
         jFood.setBackground(new java.awt.Color(217, 182, 205));
@@ -168,6 +170,7 @@ public class Menu extends javax.swing.JFrame {
         jFood.setText("Food");
         jFood.setBorder(null);
         jFood.setBorderPainted(false);
+        jFood.setFocusPainted(false);
         jItems.add(jFood);
 
         jExtra.setBackground(new java.awt.Color(217, 182, 205));
@@ -176,6 +179,7 @@ public class Menu extends javax.swing.JFrame {
         jExtra.setText("Extra Services");
         jExtra.setBorder(null);
         jExtra.setBorderPainted(false);
+        jExtra.setFocusPainted(false);
         jItems.add(jExtra);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

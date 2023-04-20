@@ -1,7 +1,10 @@
 # Wedding Planner
 ---
-This will an enterprise Java program for wedding planners for mannegerial purpose. 
-We will be working with Netbeans and ANT 
+We are developing an enterprise-level Java program aimed at assisting wedding planners with their managerial tasks. Our development platform of choice will be Netbeans, and we will utilize ANT for our project management needs. It is important to note that this is currently a demonstration version, and further updates will be necessary to ensure full functionality. Our software automates a local database that has been built using MYSQL.
+
+## Requirements
+- [Connector/J 8.0.33](https://dev.mysql.com/downloads/connector/j/) (For Developemnt) 
+- Java 
 
 ## Run
 ---
@@ -31,3 +34,5 @@ and distribute the ZIP file.
 ## Application
 
 <img src="src/icon/windowview.png">
+
+<img src="https://youtu.be/lNSwRlMQVXA">
