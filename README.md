@@ -32,5 +32,6 @@ and distribute the ZIP file.
 * Be availabe for Gmeet daily from 9:30 to 11:30 pm
 
 ## Application
+**Tap Image To See Demo**
 
 [![Watch the video](src/icon/windowview.png)](https://youtu.be/lNSwRlMQVXA)
